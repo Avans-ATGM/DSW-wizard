@@ -26,3 +26,13 @@ in src/content is the index of all questions and sub files.
 In the content file are the headers and sections described.
 Each sections calls the information out of the src/question folder.
 The src/questions folder contains all questions are writing of the document generated.
+the UUID file parameters are imported into these files to increase clarity.
+
+# 2. upload a document model
+- install dsw-tdk
+- '' dsw-tdk put ''
+- fill in API ( go to the website -> help -> about -> copy api_url
+- Username (user email)
+- Password
+
+be sure that the template.json is valid and all variables are okay
