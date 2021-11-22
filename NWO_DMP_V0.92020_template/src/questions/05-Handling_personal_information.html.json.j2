@@ -1,0 +1,30 @@
+{% import "src/UUID.j2" as UUID with context %}
+<div id="Edit this" class="question">
+ <div class="answer">
+	
+	
+		{%- set qProcessPersonalDataUUIDPATH = [UUID.chapter5UUID,UUID.qProcessPersonalDataUUID]|reply_path -%}
+		{%- set qProcessPersonalData = repliesMap[qProcessPersonalDataUUIDPATH]|reply_str_value -%}
+		{%- set aProcessPersonalData = km.entities.answers[qProcessPersonalData] -%}
+		{%- set aProcessPersonalDataYesUUIDQpath = [qProcessPersonalDataUUIDPATH,UUID.aProcessPersonalDataYesUUID,UUID.aProcessPersonalDataYesUUIDQ]|reply_path -%}	
+		{%- set aProcessPersonalDataYesA = repliesMap[aProcessPersonalDataYesUUIDQpath]|reply_str_value -%}
+
+
+		{%- set ownershipDatamanageUUIDpath = [UUID.chapter5UUID,UUID.ownershipDatamanageUUID]|reply_path -%}
+		{%- set aownershipDatamanage = repliesMap[ownershipDatamanageUUIDpath]|reply_str_value -%}
+
+		{% if qProcessPersonalData %}
+                	<p> Is personal data stored or processed?: {{aProcessPersonalData.label}} <p>
+                	{% if qProcessPersonalData == UUID.aProcessPersonalDataYesUUID  %}
+                	<p> Compliance with legalisation and regulation of personal data be ensured : {{ aProcessPersonalDataYesA}}  <p>
+			{% endif %}
+		{% else %}
+		<p> Is personal data stored or processed?: <p>
+                {% endif %}
+                <p> How is the ownership of the data and intellectual property rights to the data managed?: {{ aownershipDatamanage }} <p>
+
+    
+        
+  </div>
+</div>
+

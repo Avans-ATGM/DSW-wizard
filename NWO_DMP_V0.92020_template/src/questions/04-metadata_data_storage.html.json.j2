@@ -1,0 +1,40 @@
+{% import "src/UUID.j2" as UUID with context %}
+<div id="storage_metadata" class="question">
+ <div class="answer">
+	
+    
+{%- set qData_metadataStorageBackupUUIDPath = [UUID.chapter4UUID,UUID.qData_metadataStorageBackupUUID]|reply_path -%}
+{%- set qData_metadataStorageBackup = repliesMap[qData_metadataStorageBackupUUIDPath]|reply_str_value -%}
+{%- set amData_metadataStorage = km.entities.answers[qData_metadataStorageBackup] -%}
+{%- set amData_metadataStorageOtherExplainPath = [qData_metadataStorageBackupUUIDPath,UUID.amData_metadataStorageOtherUUID,UUID.amData_metadataStorageOtherExplainUUID]|reply_path -%}
+{%- set amData_metadataStorageOtherExplain = repliesMap[amData_metadataStorageOtherExplainPath]|reply_str_value -%}
+
+{%- set qDataSequrityUUIDpath = [UUID.chapter4UUID,UUID.qDataSequrityUUID]|reply_path -%}
+{%- set qmDataSequrity = repliesMap[qDataSequrityUUIDpath]|reply_str_value -%}
+{%- set qmADataSequrity = km.entities.answers[qmDataSequrity] -%}
+{%- set qmADataSequrityAdditionalotherpath = [qDataSequrityUUIDpath,UUID.qmADataSequrityAdditionalUUID,UUID.qmADataSequrityAdditionalotherUUID]|reply_path -%}
+{%- set qmADataSequrityAdditionalother = repliesMap[qmADataSequrityAdditionalotherpath]|reply_str_value -%}
+		
+		{% if qData_metadataStorageBackup %}
+                	<p> Storage of data and metadata: {{ amData_metadataStorage.label }}<p>
+                	{% if UUID.amData_metadataStorageOtherUUID == qData_metadataStorageBackup %}
+                	<p> Explaination: {{ amData_metadataStorageOtherExplain }} <p>
+			{% endif %}
+		{% else %}
+		<p> Storage of data and metadata: <p>
+                {% endif %}
+
+                
+		{% if qmDataSequrity %}
+               `	 <p> How will the data security and protection be taken care of during the research? :{{ qmADataSequrity.label }} <p>
+        		 {% if UUID.qmADataSequrityAdditionalUUID == qmDataSequrity  %}
+                	 <p> Additional security measures: {{qmADataSequrityAdditionalother}} <p>
+                	 {% endif %}
+		{% else %}
+		<p> How will the data security and protection be taken care of during the research? : <p>
+		{% endif %}
+
+        
+  </div>
+</div>
+

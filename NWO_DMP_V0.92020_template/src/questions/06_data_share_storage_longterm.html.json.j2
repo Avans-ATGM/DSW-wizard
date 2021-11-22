@@ -1,0 +1,80 @@
+{% import "src/UUID.j2" as UUID with context %}
+<div id="Edit this" class="question">
+ <div class="answer">
+
+
+{%- set qDataSelectionLongtermPresevationpath = [UUID.chapter6UUID,UUID.qDataSelectionLongtermPresevationUUID]|reply_path -%}
+{%- set amDataSelectionLongtermPresevation = repliesMap[qDataSelectionLongtermPresevationpath]|reply_str_value -%}
+{%- set AamDataSelectionLongtermPresevation = km.entities.answers[amDataSelectionLongtermPresevation] -%}
+{%- set amQDataSelectionLongtermPresevationOtherpath = [qDataSelectionLongtermPresevationpath,UUID.amDataSelectionLongtermPresevationOtherUUID,UUID.amQDataSelectionLongtermPresevationOtherUUID]|reply_path -%}
+{%- set amQDataSelectionLongtermPresevationOtherA = repliesMap[amQDataSelectionLongtermPresevationOtherpath]|reply_str_value -%}
+
+{%- set legalRestrictionsAccessDatapath = [UUID.chapter6UUID,UUID.legalRestrictionsAccessDataUUID]|reply_path -%}
+{%- set amlegalRestrictionsAccessDatapath = repliesMap[legalRestrictionsAccessDatapath]|reply_str_value -%}
+{%- set AamlegalRestrictionsAccessData = km.entities.answers[amlegalRestrictionsAccessDatapath] -%}
+
+{%- set AamlegalRestrictionsAccessDataYESpath= [legalRestrictionsAccessDatapath,UUID.AamlegalRestrictionsAccessDataYESUUID,UUID.QlegalRestrictionsAccessDataYESUUID]|reply_path -%}
+{%- set AamlegalRestrictionsAccessDataYESpathA = repliesMap[AamlegalRestrictionsAccessDataYESpath]|reply_str_value -%}
+
+{%- set DatamadeAvailableReUsepath = [UUID.chapter6UUID,UUID.DatamadeAvailableReUseUUID]|reply_path -%}
+{%- set amDatamadeAvailableReUse = repliesMap[DatamadeAvailableReUsepath]|reply_str_value -%}
+{%- set AamDatamadeAvailableReUse = km.entities.answers[amDatamadeAvailableReUse] -%}
+
+{%- set QAamDatamadeAvailableReUseOTHERpath = [DatamadeAvailableReUsepath,UUID.AamDatamadeAvailableReUseOTHERUUID,UUID.QAamDatamadeAvailableReUseOTHERUUID]|reply_path -%}
+{%- set ADatamadeAvailableReUseOTHER = repliesMap[QAamDatamadeAvailableReUseOTHERpath]|reply_str_value -%}
+
+{%- set WhenDataAvailablePath = [UUID.chapter6UUID,UUID.WhenDataAvailableUUID]|reply_path -%}
+{%- set mWhenDataAvailable = repliesMap[WhenDataAvailablePath]|reply_str_value -%}
+{%- set AmWhenDataAvailable = km.entities.answers[mWhenDataAvailable] -%}
+
+{%- set RepositoryDatapath = [UUID.chapter6UUID,UUID.RepositoryDataUUID]|reply_path -%}
+{%- set ARepositoryData = repliesMap[RepositoryDatapath]|reply_str_value -%}
+
+{%- set StratagyPublishingpath = [UUID.chapter6UUID,UUID.StratagyPublishingUUID]|reply_path -%}
+{%- set AStratagyPublishing = repliesMap[StratagyPublishingpath]|reply_str_value -%}
+		
+
+
+		{% if amDataSelectionLongtermPresevation %}
+                	<p> How will data be selected for long-term preservation: {{ AamDataSelectionLongtermPresevation.label }} <p>
+                	{% if UUID.amDataSelectionLongtermPresevationOtherUUID == amDataSelectionLongtermPresevation %}
+                	<p> specification: {{ amQDataSelectionLongtermPresevationOtherA }} <p>
+			{% endif %}
+		{% else %}
+			<p> How will data be selected for long-term preservation: <p>
+                {% endif %}
+
+
+
+		{% if amlegalRestrictionsAccessDatapath %}
+                	<p> Are there any (legal, IP, privacy related, security related) reasons to restrict access to the data once made publicly available, to limit which data made publicly available, or to not make part of the data publicly available?: {{ AamlegalRestrictionsAccessData.label }} <p>
+			{% if amlegalRestrictionsAccessDatapath == UUID.AamlegalRestrictionsAccessDataYESUUID %} <p>
+                	<p> Explaination: {{AamlegalRestrictionsAccessDataYESpathA}} <p>
+                	{% endif %}
+		{% else %}
+	 	<p> Are there any (legal, IP, privacy related, security related) reasons to restrict access to the data once made publicly available, to limit which data made publicly available: <p>
+		{% endif %}
+
+
+		{% if amDatamadeAvailableReUse %}
+                	<p> What data will be made available: {{ AamDatamadeAvailableReUse.label}} <p>
+                	{% if amDatamadeAvailableReUse == UUID.AamDatamadeAvailableReUseOTHERUUID %}
+                	<p> Reason: {{ ADatamadeAvailableReUseOTHER }}  <p>
+                	{% endif %}
+		{% else %}
+		<p>  What data will be made available: <p>
+		{% endif %}
+		
+		{% if  mWhenDataAvailable %}
+                	<p> Data will be available: {{ AmWhenDataAvailable.label}} <p>
+		{% else %}
+		<p> Data will be available: <p>
+		{% endif %}
+
+                <p> In what repository will the data be made available: {{ ARepositoryData }} <p>
+                <p> Stratagy for Publishing: {{AStratagyPublishing}} <p>
+    
+        
+  </div>
+</div>
+

@@ -1,0 +1,37 @@
+{% import "src/UUID.j2" as UUID with context %}
+<div id="re_use_data_and_type" class="question">
+ <div class="answer">
+
+	{%- set re_use_data_path = [UUID.chapter2cUUID,UUID.re_use_dataUUID]|reply_path -%}
+	{%- set re_use_data = repliesMap[re_use_data_path]|reply_str_value -%}
+	{%- set re_use_data_answer = km.entities.answers[re_use_data] -%}
+
+
+	{%- set re_use_data_explain_path = [re_use_data_path,UUID.re_use_data_answer_yesUUID,UUID.re_use_data_explainUUID]|reply_path -%}
+	{%- set re_use_data_explain = repliesMap[re_use_data_explain_path]|reply_str_value -%}
+
+
+	{%- set qdata_format_types_path = [UUID.chapter2cUUID,UUID.qdata_format_types_UUID]|reply_path -%}
+	{%- set aData_format_types = repliesMap[qdata_format_types_path]|reply_str_value -%}
+
+	{%- set qMhowManyData_path = [UUID.chapter2cUUID,UUID.qMhowManyDataUUID]|reply_path -%}
+	{%- set qMhowManyData = repliesMap[qMhowManyData_path]|reply_str_value -%}
+
+	
+
+	{% if re_use_data_answer %}
+        <p>Is there any data that is going to be reused: {{ re_use_data_answer.label }} <p>
+        	{% if UUID.re_use_data_answer_yesUUID == re_use_data %}
+        	<p> explaination: {{ re_use_data_explain }} <p>
+		{% endif %}
+	{% else %}
+	<p> is there any data that is going to be re-used?: <p>
+        {% endif %}
+
+        <p> the following data formats will be used: {{ aData_format_types }}  <p> 
+	<p> The following number of data storage will be used for this project: {{ qMhowManyData }} <p>
+    
+        
+  </div>
+</div>
+

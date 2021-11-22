@@ -1,0 +1,14 @@
+{% import "src/UUID.j2" as UUID with context %}
+<div id="Edit this" class="question">
+ <div class="answer">
+
+  
+	{%- set ResourcesforFairPath = [UUID.chapter7UUID,UUID.ResourcesforFair]|reply_path -%}
+	{%- set AResourcesforFair = repliesMap[ResourcesforFairPath]|reply_str_value -%}
+    	
+        <p> Resource description: {{ AResourcesforFair }} <p>
+
+        
+  </div>
+</div>
+

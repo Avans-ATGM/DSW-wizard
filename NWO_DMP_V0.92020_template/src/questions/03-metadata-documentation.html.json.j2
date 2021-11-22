@@ -1,0 +1,19 @@
+{% import "src/UUID.j2" as UUID with context %}
+<div id="Metadata" class="question">
+ <div class="answer">
+
+	
+	{%- set qDocumentationDataPath = [UUID.chapter3UUID,UUID.qDocumentationData]|reply_path -%}
+	{%- set aDocumentationData = repliesMap[qDocumentationDataPath]|reply_str_value -%}
+
+	{%- set qMetadataStandardsPath = [UUID.chapter3UUID,UUID.qMetadataStandards]|reply_path -%}
+	{%- set aMetadataStandards = repliesMap[qMetadataStandardsPath]|reply_str_value -%}
+    
+        
+        <p> Documentation of the data: {{ aDocumentationData }} <p>
+        <p> Metadata indication : {{ aMetadataStandards }} <p>
+
+
+  </div>
+</div>
+
