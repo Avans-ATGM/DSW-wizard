@@ -1,12 +1,12 @@
 {
     "templateId": "avans",
     "organizationId": "avans.dsw",
-    "version": "0.1.0",
+    "version": "1.0.3",
     "name": "NWO DMP document template",
     "description": "template for the custome NWO DMP 2020 template",
     "license": "CC0",
     "metamodelVersion": 5,
-    "recommendedPackageId": "avans.dsw:nwo-dmp-v-092020:1.0.1",
+    "recommendedPackageId": "avans.dsw:nwo-dmp-v-092020:1.0.2",
     "allowedPackages": [
         {
             "orgId": "avans.dsw",

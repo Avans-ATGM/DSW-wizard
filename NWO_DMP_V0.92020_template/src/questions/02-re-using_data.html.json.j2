@@ -31,10 +31,10 @@
 
 	{# formats #}
     {% for formatUUID in aData_format_types %}
-		{% set format_namepath[qdata_format_types_path,formatUUID,UUID.format_name]|reply_path}
-		{% set format_answer = repliesMap[format_namepath] %}
+		{%- set format_namepath = [qdata_format_types_path,formatUUID,UUID.format_name]|reply_path -%}
+		{%- set format_answer = repliesMap[format_namepath] -%}
 		{% if format_answer %}
-			<li> format_answer.value.value</li>
+			<li>{{ format_answer.value.value.value }}</li>
 		{% endif %}
 	{% endfor %}
 
