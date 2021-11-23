@@ -26,8 +26,7 @@
 
                 
 		{% if qmDataSequrity %}
-            <p><i><u>How will the data security and protection be taken care of during the research? :</i></u>
-			{{ qmADataSequrity.label }}.<p>
+            <p><i><u>How will the data security and protection be taken care of during the research? :</i></u><br>{{ qmADataSequrity.label }}.<p>
         		 {% if UUID.qmADataSequrityAdditionalUUID == qmDataSequrity  %}
                 	 <p><i><u>Additional security measures :</i></u><br>{{qmADataSequrityAdditionalother}}<p>
                 	 {% endif %}

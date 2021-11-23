@@ -47,37 +47,32 @@
 
 
 		{% if amlegalRestrictionsAccessDatapath %}
-                	<p><i><u>Are there any (legal, IP, privacy related, security related) reasons to restrict access to the data once made publicly available, to limit which data made publicly available, or to not make part of the data publicly available? :<i><u><br> {{ AamlegalRestrictionsAccessData.label }}.<p>
+                	<p><i><u>Are there any (legal, IP, privacy related, security related) reasons to restrict access to the data once made publicly available, to limit which data made publicly available, or to not make part of the data publicly available? :</i></u><br> {{ AamlegalRestrictionsAccessData.label }}.<p>
 			{% if amlegalRestrictionsAccessDatapath == UUID.AamlegalRestrictionsAccessDataYESUUID %}<p>
                 	<p><i><u>Explaination :</i></u><br>{{AamlegalRestrictionsAccessDataYESpathA}}<p>
                 	{% endif %}
 		{% else %}
-	 		<p><i><u>Are there any (legal, IP, privacy related, security related) reasons to restrict access to the data once made publicly available, to limit which data made publicly available:<i><u><p>
+	 		<p><i><u>Are there any (legal, IP, privacy related, security related) reasons to restrict access to the data once made publicly available, to limit which data made publicly available:</i></u><p>
 		{% endif %}
 
 
 		{% if amDatamadeAvailableReUse %}
-                	<i><u>What data will be made available? :</i></u>
-					<p>{{ AamDatamadeAvailableReUse.label}}.<p>
+                	<p><i><u>What data will be made available? :</i></u><br>{{ AamDatamadeAvailableReUse.label}}.<p>
                 	{% if amDatamadeAvailableReUse == UUID.AamDatamadeAvailableReUseOTHERUUID %}
-                	<i><u>Reason :</i></u>
-					<p>{{ ADatamadeAvailableReUseOTHER }}<p>
+                	<p><i><u>Reason :</i></u><br>{{ ADatamadeAvailableReUseOTHER }}<p>
                 	{% endif %}
 		{% else %}
 		<i><u>What data will be made available? :</i></u>
 		{% endif %}
 		
 		{% if  mWhenDataAvailable %}
-                	<i><u>When will data be available? :</i></u>
-					<p>{{ AmWhenDataAvailable.label}}.<p>
+                	<p><i><u>When will data be available? :</i></u><br>{{ AmWhenDataAvailable.label}}.<p>
 		{% else %}
-                	<i><u>When will data be available? :</i></u>
+                	<p><i><u>When will data be available? :</i></u>
 		{% endif %}
 
-                <i><u>In what repository will the data be made available? :</i></u>
-				<p>{{ ARepositoryData }}<p>
-                <i><u>Stratagy for Publishing :</i></u>
-				<p>{{AStratagyPublishing}}<p>
+                <p><i><u>In what repository will the data be made available? :</i></u><br>{{ ARepositoryData }}<p>
+                <p><i><u>Stratagy for Publishing :</i></u><br>{{AStratagyPublishing}}<p>
     
         
   </div>
