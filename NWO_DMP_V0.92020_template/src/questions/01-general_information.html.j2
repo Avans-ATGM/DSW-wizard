@@ -6,17 +6,10 @@
 	{%- set applicant = repliesMap[qApplicantProjectPath]|reply_str_value -%}
 	{%- set name_datamanagment = repliesMap[qNameDmanagementPath]|reply_str_value -%}
 	
-        {% if applicant%}
-        <p> applicant: {{applicant}}<p>
-        {% else %}
-        <p> applicant:___________________<p>
-        {% endif %}
+        <p> Applicant: {{applicant}}<p>
 
-        {% if name_datamanagment %}
-        <p> data manager: {{name_datamanagment}}<p>
-        {% else %}
-        <p> data manager:___________________<p>
-        {% endif %}
+        <p> Data steward: {{name_datamanagment}}<p>
+
 
   </div>
 </div>

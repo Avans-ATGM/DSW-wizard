@@ -23,13 +23,14 @@
 	{% if re_use_data_answer %}
         <p>Is there any data that is going to be reused: {{ re_use_data_answer.label }} <p>
         	{% if UUID.re_use_data_answer_yesUUID == re_use_data %}
-        	<p> explaination: {{ re_use_data_explain }} <p>
+        	<p> Explaination: {{ re_use_data_explain }} <p>
 		{% endif %}
 	{% else %}
-	<p> is there any data that is going to be re-used?: <p>
+	<p> Is there any data that is going to be re-used?: <p>
         {% endif %}
 
 	{# formats #}
+	<p> data formats: </p>
     {% for formatUUID in aData_format_types %}
 		{%- set format_namepath = [qdata_format_types_path,formatUUID,UUID.format_name]|reply_path -%}
 		{%- set format_answer = repliesMap[format_namepath] -%}
