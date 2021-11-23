@@ -14,14 +14,17 @@
 		{%- set aownershipDatamanage = repliesMap[ownershipDatamanageUUIDpath]|reply_str_value -%}
 
 		{% if qProcessPersonalData %}
-                	<p> Is personal data stored or processed?: {{aProcessPersonalData.label}} <p>
+                	<i><u>Is personal data stored or processed? : </i></u>
+					<p>{{aProcessPersonalData.label}}.<p>
                 	{% if qProcessPersonalData == UUID.aProcessPersonalDataYesUUID  %}
-                	<p> Compliance with legalisation and regulation of personal data be ensured : {{ aProcessPersonalDataYesA}}  <p>
+                	<i><u>Compliance with legalisation and regulation of personal data be ensured :</i></u>
+					<p>{{ aProcessPersonalDataYesA}}  <p>
 			{% endif %}
 		{% else %}
-		<p> Is personal data stored or processed?: <p>
-                {% endif %}
-                <p> How is the ownership of the data and intellectual property rights to the data managed?: {{ aownershipDatamanage }} <p>
+			<i><u>Is personal data stored or processed? : </i></u>
+        {% endif %}
+         <i><u>How is the ownership of the data and intellectual property rights to the data managed? :</i></u>
+		<p>{{ aownershipDatamanage }}<p>
 
     
         

@@ -17,32 +17,36 @@
 
 	{%- set qMhowManyData_path = [UUID.chapter2cUUID,UUID.qMhowManyDataUUID]|reply_path -%}
 	{%- set qMhowManyData = repliesMap[qMhowManyData_path]|reply_str_value -%}
+	{%- set aMhowmanyData = km.entities.answers[qMhowManyData] -%}
 
 	
 
 	{% if re_use_data_answer %}
-        <p>Is there any data that is going to be reused: {{ re_use_data_answer.label }} <p>
+        <i><u>Is there any data that is going to be reused : </i></u>
+		<p>{{ re_use_data_answer.label }}. <p>
         	{% if UUID.re_use_data_answer_yesUUID == re_use_data %}
-        	<p> Explaination: {{ re_use_data_explain }} <p>
+        	<i><u>Explaination :</i></u>
+			<p>{{ re_use_data_explain }}<p>
 		{% endif %}
 	{% else %}
-	<p> Is there any data that is going to be re-used?: <p>
+	<i><u>Is there any data that is going to be re-used? : </i></u>
         {% endif %}
 
 	{# formats #}
-	<p> data formats: </p>
+	<i><u>Data formats : </i></u>
     {% for formatUUID in aData_format_types %}
 		{%- set format_namepath = [qdata_format_types_path,formatUUID,UUID.format_name]|reply_path -%}
 		{%- set format_answer = repliesMap[format_namepath] -%}
 		{% if format_answer %}
-			<li>{{ format_answer.value.value.value }}</li>
+			<li>{{ format_answer.value.value.value }}.</li>
 		{% endif %}
 	{% endfor %}
 
 
-
-	<p> The following number of data storage will be used for this project: {{ qMhowManyData }} <p>
-    
+	{% if aMhowmanyData %}
+	<i><u>The following number of data storage will be used for this project:  </i></u>
+	<p>{{ aMhowmanyData.label }}. </p>
+    {% endif %}
         
   </div>
 </div>

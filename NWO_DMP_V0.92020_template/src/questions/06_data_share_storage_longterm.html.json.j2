@@ -57,22 +57,27 @@
 
 
 		{% if amDatamadeAvailableReUse %}
-                	<p> What data will be made available: {{ AamDatamadeAvailableReUse.label}} <p>
+                	<i><u>What data will be made available? : </i></u>
+					<p>{{ AamDatamadeAvailableReUse.label}}. <p>
                 	{% if amDatamadeAvailableReUse == UUID.AamDatamadeAvailableReUseOTHERUUID %}
-                	<p> Reason: {{ ADatamadeAvailableReUseOTHER }}  <p>
+                	<i><u>Reason : </i></u>
+					<p>{{ ADatamadeAvailableReUseOTHER }}  <p>
                 	{% endif %}
 		{% else %}
-		<p>  What data will be made available: <p>
+		<i><u>What data will be made available? : </i></u>
 		{% endif %}
 		
 		{% if  mWhenDataAvailable %}
-                	<p> Data will be available: {{ AmWhenDataAvailable.label}} <p>
+                	<i><u>When will data be available? : </i></u>
+					<p>{{ AmWhenDataAvailable.label}}.<p>
 		{% else %}
-		<p> Data will be available: <p>
+                	<i><u>When will data be available? : </i></u>
 		{% endif %}
 
-                <p> In what repository will the data be made available: {{ ARepositoryData }} <p>
-                <p> Stratagy for Publishing: {{AStratagyPublishing}} <p>
+                <i><u>In what repository will the data be made available? : </i></u>
+				<p>{{ ARepositoryData }}<p>
+                <i><u>Stratagy for Publishing : </i></u>
+				<p>{{AStratagyPublishing}}<p>
     
         
   </div>

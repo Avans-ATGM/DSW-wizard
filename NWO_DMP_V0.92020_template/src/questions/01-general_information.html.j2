@@ -6,9 +6,11 @@
 	{%- set applicant = repliesMap[qApplicantProjectPath]|reply_str_value -%}
 	{%- set name_datamanagment = repliesMap[qNameDmanagementPath]|reply_str_value -%}
 	
-        <p> Applicant: {{applicant}}<p>
+  <i><u>Applicant : </u></i>
+  <p>{{applicant}}<p>
 
-        <p> Data steward: {{name_datamanagment}}<p>
+  <i><u>Data steward : </i></u>
+  <p>{{name_datamanagment}}<p>
 
 
   </div>
