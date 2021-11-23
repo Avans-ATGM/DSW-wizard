@@ -11,8 +11,9 @@
 	{%- set re_use_data_explain = repliesMap[re_use_data_explain_path]|reply_str_value -%}
 
 
-	{%- set qdata_format_types_path = [UUID.chapter2cUUID,UUID.qdata_format_types_UUID]|reply_path -%}
-	{%- set aData_format_types = repliesMap[qdata_format_types_path]|reply_str_value -%}
+	{%- set qdata_format_types_path = [UUID.chapter2cUUID,UUID.formats_list_UUID]|reply_path -%}
+	{%- set aData_format_types = repliesMap[qdata_format_types_path]|reply_items -%}
+	
 
 	{%- set qMhowManyData_path = [UUID.chapter2cUUID,UUID.qMhowManyDataUUID]|reply_path -%}
 	{%- set qMhowManyData = repliesMap[qMhowManyData_path]|reply_str_value -%}
@@ -28,7 +29,17 @@
 	<p> is there any data that is going to be re-used?: <p>
         {% endif %}
 
-        <p> the following data formats will be used: {{ aData_format_types }}  <p> 
+	{# formats #}
+    {% for formatUUID in aData_format_types %}
+		{% set format_namepath[qdata_format_types_path,formatUUID,UUID.format_name]|reply_path}
+		{% set format_answer = repliesMap[format_namepath] %}
+		{% if format_answer %}
+			<li> format_answer.value.value</li>
+		{% endif %}
+	{% endfor %}
+
+
+
 	<p> The following number of data storage will be used for this project: {{ qMhowManyData }} <p>
     
         
