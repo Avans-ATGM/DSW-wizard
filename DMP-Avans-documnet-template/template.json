@@ -1,7 +1,7 @@
 {
     "templateId": "Avans_general_DMP",
     "organizationId": "avans.dsw",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "name": "Avans DMP document template",
     "description": "Document template for Data Management Plan format Avans",
     "license": "CC0",
