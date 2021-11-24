@@ -22,16 +22,16 @@
 	
 
 	{% if re_use_data_answer %}
-        <p><i><u>Is there any data that is going to be re-used :</i></u><br>{{ re_use_data_answer.label }}. <p>
+        <p><i><u>Is there any data that is going to be re-used:</i></u><br>{{ re_use_data_answer.label }}. <p>
         	{% if UUID.re_use_data_answer_yesUUID == re_use_data %}
-        	<p><i><u>explanation :</i></u><br>{{ re_use_data_explain }}<p>
+        	<p><i><u>explanation:</i></u><br>{{ re_use_data_explain }}<p>
 		{% endif %}
 	{% else %}
-	<i><u>Is there any data that is going to be re-used? :</i></u>
+	<i><u>Is there any data that is going to be re-used:</i></u>
         {% endif %}
 
 	{# formats #}
-	<p><i><u>Data formats :</i></u>
+	<p><i><u>Data formats:</i></u>
     {% for formatUUID in aData_format_types %}
 		{%- set format_namepath = [qdata_format_types_path,formatUUID,UUID.format_name]|reply_path -%}
 		{%- set format_answer = repliesMap[format_namepath] -%}
@@ -42,7 +42,7 @@
 	<p>
 
 	{% if aMhowmanyData %}
-	<p><i><u>The following number of data storage will be used for this project :</i></u><br>
+	<p><i><u>The following number of data storage will be used for this project:</i></u><br>
 	{{ aMhowmanyData.label }}.<p>
     {% endif %}
         

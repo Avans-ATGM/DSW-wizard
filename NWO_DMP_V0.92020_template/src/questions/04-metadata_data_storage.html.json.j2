@@ -16,22 +16,22 @@
 {%- set qmADataSequrityAdditionalother = repliesMap[qmADataSequrityAdditionalotherpath]|reply_str_value -%}
 		
 		{% if qData_metadataStorageBackup %}
-                	<p><i><u>Storage of data and metadata :</i></u><br>{{ amData_metadataStorage.label }}.<p>
+                	<p><i><u>Storage of data and metadata:</i></u><br>{{ amData_metadataStorage.label }}.<p>
                 	{% if UUID.amData_metadataStorageOtherUUID == qData_metadataStorageBackup %}
-                	<p><i><u>explanation :</i></u><br>{{ amData_metadataStorageOtherExplain }} <p>
+                	<p><i><u>Explanation:</i></u><br>{{ amData_metadataStorageOtherExplain }} <p>
 			{% endif %}
 		{% else %}
-		<p><i><u>Storage of data and metadata :</i></u><p>
+		<p><i><u>Storage of data and metadata:</i></u><p>
                 {% endif %}
 
                 
 		{% if qmDataSequrity %}
-            <p><i><u>How will the data security and protection be taken care of during the research? :</i></u><br>{{ qmADataSequrity.label }}.<p>
+            <p><i><u>How will the data security and protection be taken care of during the research:</i></u><br>{{ qmADataSequrity.label }}.<p>
         		 {% if UUID.qmADataSequrityAdditionalUUID == qmDataSequrity  %}
-                	 <p><i><u>Additional security measures :</i></u><br>{{qmADataSequrityAdditionalother}}<p>
+                	 <p><i><u>Additional security measures:</i></u><br>{{qmADataSequrityAdditionalother}}<p>
                 	 {% endif %}
 		{% else %}
-		<p><i><u>How will the data security and protection be taken care of during the research? :</i></u><p>
+		<p><i><u>How will the data security and protection be taken care of during the research:</i></u><p>
 		{% endif %}
 
         
