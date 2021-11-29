@@ -1,0 +1,28 @@
+{% import "src/UUID.j2" as UUID with context %}
+<div id="Edit this" class="question">
+ <div class="answer">
+
+    {%- set Project_number_path = [UUID.chapter01_basic_uudid, UUID.qApplicantProjectNUUID]|reply_path -%}
+	{%- set A_project_number = repliesMap[qApplicantProjectPath]|reply_str_value -%}
+
+    {%- set title_research_path = [UUID.chapter01_basic_uudid, UUID.title_research_uuid]|reply_path -%}
+    {%- set A_title_research = repliesMap[title_research_path]|reply_str_value -%}
+
+    {%- set samenvatting_path = [UUID.chapter01_basic_uudid,UUID.samenvatting_path]|reply_path -%}
+    {%- set A_samenvatting = repliesMap[samenvatting_path]|reply_str_value -%}
+
+    {%- set start_date_path = [UUID.chapter01_basic_uudid,UUID.start_date_uuid]|reply_path -%}
+    {%- set A_start_date = repliesMap[start_date_path]|reply_str_value -%}
+
+    {%- set end_date_path = [UUID.chapter01_basic_uudid, UUID.end_date_uuid]|reply_path -%}
+    {%- set A_end_date = repliesMap[end_date_path]|reply_str_value -%}
+
+    <p><i><u>Projectnummer:</u></i> {{A_project_number}}<p>
+    <p><i><u>Titel Onderzoek:</u></i> {{A_title_research}}<p>
+    <p><i><u>Samenvatting:</u></i><br>{{A_samenvatting}}<p>
+    <p><i><u>Startdatum:</u></i> {{A_start_date}}<p>
+    <p><i><u>Einddatum:</u></i> {{A_end_date}}<p>
+
+
+  </div>
+</div>
