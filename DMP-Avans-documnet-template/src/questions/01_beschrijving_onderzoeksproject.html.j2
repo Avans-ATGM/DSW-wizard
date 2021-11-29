@@ -2,8 +2,7 @@
 <div id="Edit this" class="question">
  <div class="answer">
 
-    {%- set Project_number_path = [UUID.chapter01_basic_uudid, UUID.qApplicantProjectNUUID]|reply_path -%}
-	{%- set A_project_number = repliesMap[qApplicantProjectPath]|reply_str_value -%}
+
 
     {%- set title_research_path = [UUID.chapter01_basic_uudid, UUID.title_research_uuid]|reply_path -%}
     {%- set A_title_research = repliesMap[title_research_path]|reply_str_value -%}
@@ -17,12 +16,34 @@
     {%- set end_date_path = [UUID.chapter01_basic_uudid, UUID.end_date_uuid]|reply_path -%}
     {%- set A_end_date = repliesMap[end_date_path]|reply_str_value -%}
 
-    <p><i><u>Projectnummer:</u></i> {{A_project_number}}<p>
+    {%- set Project_number_path = [UUID.chapter01_basic_uudid, UUID.qApplicantProjectNUUID]|reply_path -%}
+	  {%- set A_project_number = repliesMap[qApplicantProjectPath]|reply_str_value -%}
+
+    {%- set Funder_uuid_path = [UUID.chapter01_basic_uudid,UUID.Funder_uuid]|reply_path -%}
+    {%- set Funder = repliesMap[Funder_uuid_path]|reply_str_value -%}
+
+    {%- set Fund_status_path = [UUID.chapter01_basic_uudid,UUID.Fund_status_uuid]|reply_path -%}
+    {%- set Fund_status_all_answers = repliesMap[qDataSequrityUUIDpath]|reply_str_value -%}
+    {%- set Fund_status_answer = km.entities.answers[qmDataSequrity] -%}
+
+    {%- set Grant_number_path = [UUID.chapter01_basic_uudid,UUID.grant_number_uuid]|reply_path -%}
+    {%- set Grant_number = repliesMap[Grant_number_path]|reply_str_value -%}
+
+
     <p><i><u>Titel Onderzoek:</u></i> {{A_title_research}}<p>
     <p><i><u>Samenvatting:</u></i><br>{{A_samenvatting}}<p>
     <p><i><u>Startdatum:</u></i> {{A_start_date}}<p>
     <p><i><u>Einddatum:</u></i> {{A_end_date}}<p>
+    <p><i><u>Projectnummer:</u></i> {{A_project_number}}<p>
+    <p><i><u>Funder:</u></i> {{Funder}}<p>
 
+    {% if Fund_status_all_answers %}
+      <p><i><u>Fund Status:</i></u><br>{{ Fund_status_answer.label }}.<p>
+		{% else %}
+      <p><i><u>Fund Status:</i></u><p>
+    {% endif %}
+
+    <p><i><u>Grant number/url:</u></i> {{Grant_number}}<p>
 
   </div>
 </div>
