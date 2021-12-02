@@ -1,17 +1,17 @@
 {
-    "templateId": "avans_NWO",
+    "templateId": "DMP-avans",
     "organizationId": "avans.dsw",
-    "version": "1.1.2",
-    "name": "NWO DMP document template",
-    "description": "template for the custome NWO DMP 2020 template",
+    "version": "1.0.1",
+    "name": "General Avans template",
+    "description": "General DMP template for Avans Hogeschool",
     "license": "CC0",
     "metamodelVersion": 5,
-    "recommendedPackageId": "avans.dsw:nwo-dmp-v-092020:1.0.5",
+    "recommendedPackageId": "avans.dsw:DMP-avans:1.0.2",
     "allowedPackages": [
         {
             "orgId": "avans.dsw",
-            "kmId": "nwo-dmp-v-092020",
-            "minVersion": "0.1.0",
+            "kmId": "DMP-avans",
+            "minVersion": "1.0.2",
             "maxVersion": null
         }
     ],
