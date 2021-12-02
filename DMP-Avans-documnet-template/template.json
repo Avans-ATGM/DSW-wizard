@@ -1,16 +1,16 @@
 {
-    "templateId": "DMP-avans",
+    "templateId": "DMP_avans",
     "organizationId": "avans.dsw",
-    "version": "1.0.5",
-    "name": "Avans DMP document template",
-    "description": "Document template for Data Management Plan format Avans",
+    "version": "1.0.6",
+    "name": "General Avans Template",
+    "description": "The general Avans DMP template to use",
     "license": "CC0",
     "metamodelVersion": 5,
-    "recommendedPackageId": "avans.dsw:DMP-avans:1.0.0",
+    "recommendedPackageId": "avans.dsw:DMP_avans:1.0.2",
     "allowedPackages": [
         {
             "orgId": "avans.dsw",
-            "kmId": "DMP-avans",
+            "kmId": "DMP_avans",
             "minVersion": "1.0.2",
             "maxVersion": null
         }

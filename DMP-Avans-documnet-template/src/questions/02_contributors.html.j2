@@ -8,7 +8,7 @@
 	{%- set Contributors_answers = repliesMap[Contributors_list]|reply_items -%}
 
 
-    {% for Contributor in Contributors_answers %}
+    {%- for Contributor in Contributors_answers -%}
 		{%- set Contributor_name_path = [Contributors_list,Contributor,contributor_sub_naam_uuid.UUID]|reply_path -%}
 		{%- set Contributor_name = repliesMap[format_namepath]reply_str_value -%}
 
@@ -40,12 +40,12 @@
 
             <p> {{contributor_Roles_list_path}} <p>
 
-            {%if contributor_exstra_info %}
-            <p><i><u> Exstra informatie: </i></u> {{ contributor_Email}} <p>
+            {%- if contributor_exstra_info -%}
+                <p><i><u> Exstra informatie: </i></u> {{ contributor_Email}} <p>
             {%endif%}
 
 	{% endfor %}
-	<p>
+
 
 
 
