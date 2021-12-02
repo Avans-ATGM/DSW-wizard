@@ -10,25 +10,25 @@
 
     {%- for Contributor in Contributors_answers -%}
 		{%- set Contributor_name_path = [Contributors_list,Contributor,contributor_sub_naam_uuid.UUID]|reply_path -%}
-		{%- set Contributor_name = repliesMap[format_namepath]reply_str_value -%}
+		{%- set Contributor_name = repliesMap[format_namepath]|reply_str_value -%}
 
         {%- set contributor_Email_path = [Contributors_list,Contributor,contributor_sub_email_uuid.UUID]|reply_path -%}
-		{%- set contributor_Email = repliesMap[contributor_Email_path]reply_str_value -%}
+		{%- set contributor_Email = repliesMap[contributor_Email_path]|reply_str_value -%}
 
         {%- set contributor_ORCID_path = [Contributors_list,Contributor,contributor_ORCID_uuid.UUID]|reply_path -%}
-		{%- set contributor_ORCID = repliesMap[contributor_ORCID_path]reply_str_value -%}
+		{%- set contributor_ORCID = repliesMap[contributor_ORCID_path]|reply_str_value -%}
 
         {%- set contributor_phone_number_path = [Contributors_list,Contributor,contributor_phone_number_uuid.UUID]|reply_path -%}
-		{%- set contributor_phone_number = repliesMap[contributor_phone_number_path]reply_str_value -%}
+		{%- set contributor_phone_number = repliesMap[contributor_phone_number_path]|reply_str_value -%}
 	
         {%- set contributor_Affiliation_path = [Contributors_list,Contributor,contributor_Affiliation_uuid.UUID]|reply_path -%}
-        {%- set contributor_Affiliation = repliesMap[contributor_Affiliation_path]reply_str_value -%}
+        {%- set contributor_Affiliation = repliesMap[contributor_Affiliation_path]|reply_str_value -%}
 
         {%- set contributor_Roles_uuid_path = [Contributors_list,Contributor,contributor_Roles_uuid.UUID]|reply_path -%}
-        {%- set contributor_Roles_list_path = repliesMap[contributor_Roles_uuid_path]reply_items -%}
+        {%- set contributor_Roles_list_path = repliesMap[contributor_Roles_uuid_path]|reply_items -%}
 
         {%- set contributor_exstra_info_path = [Contributors_list,Contributor,contributor_exstra_info_uuid.UUID]|reply_path -%}
-        {%- set contributor_exstra_info = repliesMap[contributor_exstra_info_path]reply_str_value -%}
+        {%- set contributor_exstra_info = repliesMap[contributor_exstra_info_path]|reply_str_value -%}
 
             
         	<p> {{Contributor_name}} <p>
