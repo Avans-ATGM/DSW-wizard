@@ -2,27 +2,35 @@
 <div id="Edit this" class="question">
  <div class="answer">
 
-    {%- set Project_number_path = [UUID.chapter01_basic_uudid, UUID.qApplicantProjectNUUID]|reply_path -%}
-	{%- set A_project_number = repliesMap[qApplicantProjectPath]|reply_str_value -%}
+    {%- set QExpertice_centrum_path = [UUID.chapter03_basic_uuid,UUID.qexpertice_centrum_uuid]|reply_path -%}
+    {%- set Qexpertice_centrum_answers = repliesMap[QExpertice_centrum_path]|reply_str_value -%}
+    {%- set Aexpertice_centrum_answer = km.entities.answers[Qexpertice_centrum_answers] -%}
 
-    {%- set title_research_path = [UUID.chapter01_basic_uudid, UUID.title_research_uuid]|reply_path -%}
-    {%- set A_title_research = repliesMap[title_research_path]|reply_str_value -%}
+    {%- set Q_lectoraat_path = [UUID.chapter03_basic_uuid, UUID.qexpertice_centrum_uuid]|reply_path -%}
+    {%- set A_lectoraat = repliesMap[Q_lectoraat_path]|reply_str_value -%}
 
-    {%- set samenvatting_path = [UUID.chapter01_basic_uudid,UUID.samenvatting_path]|reply_path -%}
-    {%- set A_samenvatting = repliesMap[samenvatting_path]|reply_str_value -%}
+    {%- set Q_PHD = [UUID.chapter03_basic_uuid,UUID.qPhd_project_uuid]|reply_path -%}
+    {%- set Q_PHD_answers = repliesMap[Q_PHD]|reply_str_value -%}
+    {%- set A_PHD_answer = km.entities.answers[Q_PHD_answers] -%}
 
-    {%- set start_date_path = [UUID.chapter01_basic_uudid,UUID.start_date_uuid]|reply_path -%}
-    {%- set A_start_date = repliesMap[start_date_path]|reply_str_value -%}
-
-    {%- set end_date_path = [UUID.chapter01_basic_uudid, UUID.end_date_uuid]|reply_path -%}
-    {%- set A_end_date = repliesMap[end_date_path]|reply_str_value -%}
-
-    <p><i><u>Projectnummer:</u></i> {{A_project_number}}<p>
-    <p><i><u>Titel Onderzoek:</u></i> {{A_title_research}}<p>
-    <p><i><u>Samenvatting:</u></i><br>{{A_samenvatting}}<p>
-    <p><i><u>Startdatum:</u></i> {{A_start_date}}<p>
-    <p><i><u>Einddatum:</u></i> {{A_end_date}}<p>
+    {%- set Q_promotor = [UUID.chapter03_basic_uuid, UUID.qPhd_promotor_uuid]|reply_path -%}
+    {%- set A_promotor = repliesMap[Q_promotor]|reply_str_value -%}
 
 
+
+    {% if Aexpertice_centrum_answer %}
+      <p><i><u>Expertisecentrum :</i></u><br>{{ Aexpertice_centrum_answer.label }}.<p>
+		{% else %}
+      <p><i><u>Expertisecentrum:</i></u><p>
+    {% endif %}
+
+
+    
+	{%- set project_leader_list = [UUID.chapter03_basic_uuid,UUID.Qproject_leader_uuid]|reply_path -%}
+	{%- set Project_leaders = repliesMap[project_leader_list]|reply_items -%}
+
+  {%- for project_leader in Project_leaders -%}
+    		{%- set Project_leader_name_path = [project_leader_list,project_leader,UUID.qproject_leider_naam_uuid]|reply_path -%}
+	    	{%- set project_leader = repliesMap[Project_leader_name_path]|reply_str_value -%}
   </div>
 </div>
