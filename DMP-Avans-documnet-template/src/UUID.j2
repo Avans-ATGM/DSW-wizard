@@ -59,46 +59,196 @@
 {%- set contributor_ORCID_uuid = "82a85db0-3e4b-4662-bedc-08893ceb9760" -%}
 {%- set contributor_phone_number_uuid = "8584390c-ec2a-458d-9469-2a6a2f7ac1c3" -%}
 {%- set contributor_Affiliation_uuid = "5ac69d57-0831-40fc-9843-bee27bf5a68f" -%}
-{%- set contributor_Roles_uuid = "173443cc-aa53-4823-a0d4-a7d5167e5958"-%}
+{%- set contributor_Roles_uuid = "173443cc-aa53-4823-a0d4-a7d5167e5958" -%}
+{%- set contributor_Roles_Datamanager_uuid = "6bc638a4-bb96-48fe-895a-551feb14fdb7"%}
+{%- set contributor_Principal_investigator_uuid = "6bc638a4-bb96-48fe-895a-551feb14fdb7" -%}
+{%- set contributor_Roles_Datamanager_uuid = "248737bf-adf8-4259-9c8c-65d3fada8e11" -%}
+{%- set contributor_Roles_Project_Administrator_uuid = "85991c3f-2c68-42cc-9795-da641e54a3d0" -%}
+{%- set contributor_Roles_Other_uuid = "c674845e-8360-401d-a60d-8236fd8d7f18" -%}
 {%- set contributor_exstra_info_uuid = "2c9abc2b-cc0e-450c-b2c2-a5d1403ae9fe" -%}
-
-
-
 
 {# 03_organisatorische gegevens#}
 {%- set chapter03_basic_uuid = "e53aedbb-a681-43c5-a95a-cc3af668a586" -%}
-{%- set qexpertice_centrum_uuid = "8d0e08c4-fb14-44b0-ae62-7851065a6167" -%}
+{%- set qmexpertice_centrum_uuid = "8d0e08c4-fb14-44b0-ae62-7851065a6167" -%}
 {%- set qlectoraat_uuid = "e0835cee-5aac-4b83-b150-7d31a3946c35" -%}
 {%- set qPhd_project_uuid = "deb84485-ca2a-422e-879b-d88c7f9b8c8e" -%}
+{%- set qPhd_project_ja_uuid = "2653b5c5-55eb-4417-ad4d-acb6571701c0" -%}
+
 {%- set qPhd_promotor_uuid = "91ff6e2c-c761-4fd3-baf3-a3ad558b6983" -%}
-{# projectleiders#}
-{%- set Qproject_leader_uuid = "53f233a8-2dcd-4dd1-8223-f35c0eeacac4" -%}
-{%- set qproject_leider_naam_uuid = "350aa0dd-450c-4958-9477-27fe5f50d015" -%}
-{%- set qproject_leider_organisatie_uuid = "4dadb8bb-53b1-4d75-9726-29941e195690" -%}
-{%- set qproject_leider_mailadres_uuid = "aeb68232-e2d2-4341-9f3d-572ccdd093ac" -%}
-{%- set qproject_leider_telefoonnummer_uuid = "dc53812c-5569-497c-9fbc-a972e0ecfde2" -%}
-{# onderzoekers#}
-{%- set Qonderzoekers_uuid = "0cf54d36-4fb1-4331-86a5-756b0cccc9f2" -%}
-{%- set Qonderzoeker_naam_uuid = "228e5365-b802-4d00-be1b-ff835857793d" -%}
-{%- set Qonderzoeker_organisatie_uuid = "65ffd333-62cb-4e0f-a0c9-207cac17f862"% -%}
-{%- set Qonderzoeker_functie_uuid = "a9039092-4919-49b9-a50c-43cc347ccb34" -%}
-{%- set Qonderzoeker_email_uuid = "ee649c30-4ebb-468e-ad9b-a1c073061ad0" -%}
-{%- set Qonderzoeker_Exstra_info_uuid = "ee649c30-4ebb-468e-ad9b-a1c073061ad0" -%}
-{#opdracht gevers#}
+{%- set qProject_leiders_list_uuid = '53f233a8-2dcd-4dd1-8223-f35c0eeacac4' -%}
+{%- set qProject_leiders_list_naam_uuid = '350aa0dd-450c-4958-9477-27fe5f50d015' -%}
+{%- set qProject_leiders_list_organisatie_uuid = '4dadb8bb-53b1-4d75-9726-29941e195690' -%}
+{%- set qProject_leiders_list_email_uuid = 'aeb68232-e2d2-4341-9f3d-572ccdd093ac' -%}
+{%- set qProject_leiders_list_telefoon_uuid = 'dc53812c-5569-497c-9fbc-a972e0ecfde2' -%}
+{%- set qProject_leiders_list_exstrainformatie_uuid = '3d3dab40-27de-4332-b0ef-a289df89e8df' -%}
+
+{%- set qOnderzoekers_list_uuid = "0cf54d36-4fb1-4331-86a5-756b0cccc9f2" -%}
+{%- set qOnderzoekers_list_naam_uuid = "228e5365-b802-4d00-be1b-ff835857793d" -%}
+{%- set qOnderzoekers_list_organisatie_uuid = "65ffd333-62cb-4e0f-a0c9-207cac17f862" -%}
+{%- set qOnderzoekers_list_functie_uuid = "a9039092-4919-49b9-a50c-43cc347ccb34" -%}
+{%- set qOnderzoekers_list_email_uuid = "ee649c30-4ebb-468e-ad9b-a1c073061ad0" -%}
+{%- set qOnderzoekers_list_exstra_uuid = "f368bf36-7a1b-4cd3-97d2-a7e01069068a" -%}
+
 {%- set Qopdrachtgever = "d1e9d6f0-b0b9-4808-8e98-f0cc59adc5dd" -%}
 {%- set Qopdrachtgever_contactpersoon = "7cdeae8f-7584-4fce-864e-47241b01f00c" -%}
 {%- set Qopdrachtgever_Organisatie = "f2f04aa8-9cf0-4e5f-bf8d-edc2e95537ad" -%}
 {%- set Qopdrachtgever_Functie = "d38d24f1-f882-4096-a752-47004f4929ea" -%}
 {%- set Qopdrachtgever_Email = "f8468de8-778c-4435-8ac1-9b965d25f47e" -%}
-{%- set Qopdrachtgever_TelefoonNR = "d1e9d6f0-b0b9-4808-8e98-f0cc59adc5dd" -%}
+{%- set Qopdrachtgever_TelefoonNR = "1b26ae03-fceb-4918-b28d-eccb8508b0e5d" -%}
 {%- set Qopdrachtgever_extra_info = "fe48a080-c82c-4e17-8ad0-5da0561174d2" -%}
 
+{%- set eigenaarschap_data = "b134d199-ff64-47e8-aa21-12bb59e36630" -%}
 
 {#04_Datamanagement rollen#}
 {%- set chapter_04_datamanagement_rollen ="4ac45865-169e-4536-b2cc-75ee620dd1e6" -%}
-{%- set Datamanagement_uuid = "4ac45865-169e-4536-b2cc-75ee620dd1e6" -%}
-{%- set eerste_verantwoordelijke_uuid = "c2365f6d-d98a-4370-b6db-55f0df4b5563" -%}
-{%- set Avans_datasteward_uuid = "7a300c9d-ecc1-494c-abdd-654268f7f04d" -%}
-{%- set waar_data_archief = "01e251c1-c76a-4d6a-bb5f-8f2201536af5" -%}
-{%- set data_opslag_constructie_uuid = "e0174f4f-3cf8-4a14-b9de-0df2b2c0a72c" -%}
-{%- set documentatie_replicatie_uuid = "eb55deb9-71f2-404e-905f-cfd2bc2975f7"%}
+
+{%- set eerste_verantwoordelijke_list_uuid = "c2365f6d-d98a-4370-b6db-55f0df4b5563" -%}
+{%- set eerste_verantwoordelijke_naam_uuid = "c885f47b-a3f0-47f1-bc54-ecbb9e7d65fc" -%}
+{%- set eerste_verantwoordelijke_Organisatie_uuid = "2a35ee8c-eaf7-4866-a9b3-d3ce1beec9a0" -%}
+{%- set eerste_verantwoordelijke_Email_uuid = "0571b5bc-ccca-45a8-bb42-f1edb96b80dc" -%}
+{%- set eerste_verantwoordelijke_Telefoon_nr_uuid = "9bc484a1-ca4f-4ccb-b9d8-c74e8204d96a" -%}
+{%- set eerste_verantwoordelijke_Exstra_informatieuuid = "67278843-cf4c-4e91-a64d-bdbe6b4aacd3" -%}
+
+{%- set qdatasteward_avans_uuid = "7a300c9d-ecc1-494c-abdd-654268f7f04d" -%}
+{%- set qdatasteward_avans_ja_uuid = "45373333-9507-4007-a4c5-9db11b099a0f" -%}
+{%- set qdatasteward_avans_naam_uuid = "1a722b32-b7af-4f5b-b14a-2e5cea9d36ee" -%}
+{%- set qdatasteward_avans_datum_uuid = "c4ebf5b3-f2a9-44cf-a2b2-c0bc1a4f935e" -%}
+
+{%- set qdata_achriveert = "01e251c1-c76a-4d6a-bb5f-8f2201536af5" -%}
+{%- set qdata_archief_structure_uuid = "e0174f4f-3cf8-4a14-b9de-0df2b2c0a72c" -%}
+{%- set qdata_documentatie_replicatie_uuid = "eb55deb9-71f2-404e-905f-cfd2bc2975f7" -%}
+
+{#05_Overzicht onderzoek data en gebruikte softwate#}
+{%- set chapter05_documentatie_replicatie_uuid ="7b7b412d-f24f-43af-a48d-35e74abc2075"-%}
+
+{%- set qBestaande_data_uuid = "2c584f38-dd95-4a49-8765-fae77758a960" -%}
+{%- set qBestaande_data_uuid_ja = "1ebc48c4-e36f-427b-8b1c-7fecd08066ac" -%}
+{%- set list_hergebruikt_data_uuid = "b776c35e-6945-418a-bee8-6376a881f591" -%}
+{%- set list_hergebruikt_data_naam_uuid = "6b0dd0f0-a215-4d56-b745-caae8b49e3081" -%}
+{%- set list_hergebruikt_data_documentatie_uuid = "62ad2eaf-d9c7-4855-ab59-5b78c2774670" -%}
+{%- set list_hergebruikt_data_voorwaarden_uuid = "908a2fcb-bab1-489b-b786-227dd360c9ac" -%}
+{%- set list_hergebruikt_data_toestemming_uuid = "9eb7b3ca-15da-429d-a5ed-63a2f664534b" -%}
+{%- set list_hergebruikt_data_toestemming_nee_uuid = "03dded06-5163-4030-b1f7-324d226c7d04" -%}
+{%- set list_hergebruikt_data_toestemming_nee_advies_uuid = "0fe20166-c962-4b58-bc10-7b2aaff140bd" -%}
+{%- set list_hergebruikt_data_toestemming_nogniet_uuid = "a37aee79-133e-4849-8949-154d43452d4e" -%}
+{%- set list_hergebruikt_data_toestemming_nogniet_toelighting_uuid = "58185294-ffc1-4aa6-90c2-43831351f137" -%}
+
+{#06_Documentatie en Metadata#}
+{%- set chapter06_documentatie_metadata_uuid = "c54c613d-396b-4376-9040-078105b5e703" -%}
+{%- set q_data_toekomst_interpeteren_uuid = "81942b99-4ea2-4800-bd61-84caf960e53b"-%}
+{%- set q_metadata_beschrijven_uuid = "5a2b2266-8b19-45ba-8f36-d55126e83102" -%}
+
+{#07_structueren van data en informatie#}
+{%- set chapter07_structureren_data_infomratie = "f4ccbe91-7481-4d2d-80c2-16b279a5f1fe" -%}
+{%- set q_gebruik_avans_template_uuid = "3b805d40-448a-4f78-b40c-7f5aa0c9bbc5" -%}
+{%- set q_gebruik_avans_template_uuid_nee = "eb252563-ecd7-461f-a2c9-a5f5cd3c8015" -%}
+{%- set q_gebruik_avans_template_uuid_nee_toelichting = "a68f998e-2fa5-4ad7-91d7-948ef5d2c438" -%}
+{%- set q_beschrijf_layout_uuid = "8d4eb7c1-bc0f-4496-9636-3142c9b43315" -%}
+
+{#08_opslag tijdens onderzoek#}
+{%- set chapter08_opslag_data_uuid = "efbccec8-8722-4061-9208-cafee2f03608" -%}
+
+{%- set list_ruwedata_uuid = "c02b5f18-4da5-4d9f-9e5e-0cbc36caed91" -%}
+{%- set list_ruwedata_uuid_naam = "d3e05773-cc52-43f8-9930-694884aecf0b" -%}
+{%- set list_ruwedata_uuid_opslaglocatie = "2b5a19eb-6d7e-4814-82a8-ad3f8beb72d6" -%}
+{%- set list_ruwedata_uuid_opslaglocatie_nee = "16504b93-7b90-49da-ae51-cb75b3fdf409" -%}
+{%- set list_ruwedata_uuid_opslaglocatie_nee_locatie = "8da8e284-54ff-49c7-b3ee-4730b6279c00" -%}
+{%- set list_ruwedata_uuid_backup_procedure = "2869f1f1-f879-410c-a269-98085826fdcb" -%}
+{%- set list_ruwedata_uuid_toegang = "bd61db6e-e146-4ac8-bf95-ebca94646437" -%}
+
+{%- set list_bewerkte_data_uuid = "c02b5f18-4da5-4d9f-9e5e-0cbc36caed91" -%}
+{%- set list_bewerkte_data_uuid_naam = "aed32121-6ddc-408e-88b5-260c611f2316" -%}
+{%- set list_bewerkte_data_uuid_opslag = "0181248c-a220-49ec-a0cd-d08599fe0f78" -%}
+{%- set list_bewerkte_data_uuid_backup = "b8445fb4-cb4b-48f9-bb79-27e8113a4944" -%}
+{%- set list_bewerkte_data_uuid_naam_toegang = "b18d803c-ddcd-4fa9-9ecd-d5470ba9add5" -%}
+
+{%- set list_publicatie_uuid = "4813b6c3-60ff-4474-8f09-b2f7645789c6" -%}
+{%- set list_publicatie_uuid_naam = "bf0d6099-6f63-493a-8d77-93ce90f4bd54" -%}
+{%- set list_publicatie_uuid_opslag = "adf1483d-3f72-4d3a-ae56-7a65db7e3cf9" -%}
+{%- set list_publicatie_uuid_backup = "9c04df5c-ad92-4d40-a482-4eb362f66e56" -%}
+{%- set list_bewerkte_data_uuid_toegang = "e71ae2f7-adce-46cd-93e4-4cc777304fb7" -%}
+
+{#09 delen eigenaarschap#}
+{%- set chapter09_eigenaar_schap_data_uuid = "a111b7d1-c225-47e7-84fa-5252cb1b47e8" -%}
+{%- set qdata_toegangelijkblijft_uuid = "226087f8-8617-4296-9883-b95f21b4802b" -%}
+{%- set qdata_toegangelijkblijft_uuid_anders = "226087f8-8617-4296-9883-b95f21b4802b" -%}
+{%- set qdata_toegangelijkblijft_uuid_anders_toelichting = "28a59eba-b63d-4566-a303-dcfddaa50770" -%}
+{%- set q_afspraken_eigenaar_uuid = "b6fa1b20-bed4-4339-a25c-ad3522bb59c4" -%}
+{%- set q_afspraken_eigenaar_uuid_ja = "57f7490a-1931-4796-81f6-95381f52dca6" -%}
+{%- set q_afspraken_eigenaar_uuid_ja_toelichting = "087af7de-4f5e-48f5-bcee-9099e374da20" -%}
+{%- set q_subsidie_eisen_uuid = "c6c5ba20-2180-4c92-a354-0d5b5e882304" -%}
+{%- set q_subsidie_eisen_uuid_ja = "3ee2f01b-a09e-41d2-9651-9ceb1325db7f" -%}
+{%- set q_subsidie_eisen_uuid_ja_toelichting = "9068e6af-f803-4a58-ab6b-6067464ff604" -%}
+{%- set q_subsidie_eisen_uuid_ja_help = "1416002d-6f84-4828-95d8-5402200c3db6" -%}
+{%- set q_subsidie_eisen_uuid_ja_help_datasteward = "cf5d4325-318f-45b8-8bf5-261c6a9e926a" -%}
+{%- set q_licentie_uuid = "2d6fd80d-b6fe-4291-b156-af6682114259" -%}
+{%- set q_licentie_uuid_anders = "24ad3bb3-5dbb-43e5-a13d-a62419a35c00" -%}
+
+{#10 wetgeving & gedragscode#}
+{%- set chapter10_wetgeving_gedragscode_uuid = "ad4e4f2b-c67a-4fd6-bf9b-3b69ffb6f095" -%}
+{%- set persoonsgegevens_uuid = "e0217e65-900a-41f4-b132-cf8e15eb0586" -%}
+{%- set persoonsgegevens_uuid_ja = "d7c176c9-e03f-4986-ab3f-5b13f917c740" -%}
+{%- set persoonsgegevens_uuid_ja_watvoorgegevens = "404b0bfd-255c-4f2a-a58f-12ac720a4cbe" -%}
+{%- set persoonsgegevens_uuid_ja_toestemming = "e0cd0f35-c9dc-43a3-941a-a17c1a062332" -%}
+{%- set persoonsgegevens_uuid_ja_toestemming_nee = "02dcde52-836d-4279-8180-5dc454001d54" -%}
+{%- set persoonsgegevens_uuid_ja_toestemming_nee_toelichting = "ce2093f2-836d-49c0-abd5-463be170e3a8" -%}
+{%- set persoonsgegevens_uuid_ja_bewaard = "0f04c6da-2d6a-4aeb-846a-3b36cda87c9f" -%}
+{%- set persoonsgegevens_uuid_ja_annomniem = "138ef528-6c50-41aa-8554-084cb7ba41d0" -%}
+{%- set persoonsgegevens_uuid_ja_annomniem_ja = "138ef528-6c50-41aa-8554-084cb7ba41d0" -%}
+{%- set persoonsgegevens_uuid_ja_annomniem_ja_toelichting = "344fd77d-a9a4-4c30-8c67-271d660f1008" -%}
+{%- set persoonsgegevens_uuid_ja_inbreuk = "b65811a9-a5e8-4db7-b59e-205bd62c7404" -%}
+{%- set persoonsgegevens_uuid_ja_inbreuk_ja = "cce5f330-24ae-4739-9e81-2b7461d5f126" -%}
+{%- set persoonsgegevens_uuid_ja_inbreuk_ja_toelichting = "0cc6486a-6f52-4106-8f61-d82cea45d620" -%}
+
+{%- set beveiligingissues_uuid = "eb96b49f-1209-46cd-b4b8-c74f997f11ba" -%}
+{%- set beveiligingissues_uuid_ja = "7311a7a9-cc72-4139-b5c4-3ca6daa3677f" -%}
+{%- set beveiligingissues_uuid_ja_toelichting = "8f444a53-a53b-46dc-a06c-b5277fb7ffa9" -%}
+
+{%- set informatie_brief_uuid = "22bf85da-9192-4ef7-96f4-6bfc5c7230ec" -%}
+{%- set informatie_brief_uuid_ja = "bf87f497-c983-4c60-b48f-5fb669b77d72" -%}
+{%- set informatie_brief_uuid_ja_opslag = "52865845-b41c-4a67-92e4-10a2003c5bb7" -%}
+{%- set informatie_brief_uuid_nee = "9d28056c-5be8-49f6-8cf2-a175774aaccb" -%}
+{%- set informatie_brief_uuid_nee_toelichting = "c2047e79-d159-4da2-bbb7-dc112508ab31" -%}
+
+{%- set partijen_uuid = "27aacc57-50e9-404a-a821-4a671754a488" -%}
+{%- set partijen_uuid_ja = "1aa295ea-2f8e-4c1c-bd79-62f7413accc3" -%}
+{%- set partijen_uuid_ja_toelichting = "6aa223ed-c4c1-44be-81fb-ca246cd9f76c" -%}
+
+{%- set gevoelige_gegevens_uuid = "66375e7d-f773-48a4-a1d2-bf7108cfdcb8" -%}
+{%- set gevoelige_gegevens_uuid_ja = "f7bced32-3816-4278-9d8c-0d9a5052cd27" -%}
+{%- set gevoelige_gegevens_uuid_ja_toelichting = "5d3a5b07-cde4-41a6-a169-37187f2f959e" -%}
+
+{#11 Data archivere#}
+{%- set chapter10_datacrchiveren_uuid = "1f9431c0-a7b4-445c-a6ad-2889cba9dce3" -%}
+
+{%- set Ruwe_data_list_uuid = "68d4f356-9084-44c1-bd5d-8e40d74eb158" -%}
+{%- set Ruwe_data_list_uuid_opslag = "3e05f5a0-e2dd-44fe-bdb4-1a96a1e4c82a" -%}
+{%- set Ruwe_data_list_uuid_termijn = "d97239e2-c7b7-470d-a383-0e9bf26f49478" -%}
+{%- set Ruwe_data_list_uuid_openacces = "02a133b3-f589-4582-a585-ced4b43454ac" -%}
+{%- set Ruwe_data_list_uuid_openacces_ja = "afaaa931-e1c3-4c92-8b34-3871040ec833" -%}
+{%- set Ruwe_data_list_uuid_openacces_ja_via = "00d200f4-949f-4f78-b9b8-aab37a9335f2" -%}
+{%- set Ruwe_data_list_uuid_openacces_nee = "02a133b3-f589-4582-a585-ced4b43454ac" -%}
+
+{%- set afgeleide_bewerkte_data_uuid = "83f52656-7512-4031-949e-0907f9a83687" -%}
+{%- set afgeleide_bewerkte_data_uuid_opslag = "2ffd7771-a86a-484c-ac80-e72765281896" -%}
+{%- set afgeleide_bewerkte_data_uuid_termijn = "e2c2e28b-7773-49b8-9d21-0dae2621c23b" -%}
+{%- set afgeleide_bewerkte_data_uuid_open_access = "8581b81ae-3e49-47a7-a1f3-e2929a9112ad" -%}
+{%- set afgeleide_bewerkte_data_uuid_open_access_ja = "811a83c1-705a-4860-9ee9-7e252b27a8e5" -%}
+{%- set afgeleide_bewerkte_data_uuid_open_access_ja_via = "926afe92-3202-4117-a79f-eed50b32f708" -%}
+{%- set afgeleide_bewerkte_data_uuid_open_access_nee = "9b79d292-5efa-4103-8bf7-09bc80663469" -%}
+{%- set afgeleide_bewerkte_data_uuid_open_access_toelichting = "7e16c642-54c1-4327-acf8-b9ecb7c0d325" -%}
+
+{%- set publicatie_list_uuid = "b4a46b76-0458-48df-b2a1-71101d415295" -%}
+{%- set publicatie_list_uuid_opslag = "e452869a-eaa5-41ae-90d2-39844d4777c9" -%}
+{%- set publicatie_list_uuid_termijn = "9adba35f-da47-4f1a-9608-8905ded3f813" -%}
+{%- set publicatie_list_uuid_open_access = "855b88f7-30c4-4577-8b0a-890e7d9cbe61" -%}
+{%- set publicatie_list_uuid_open_access_ja = "0b8c5aae-dbb3-40e0-b3e0-0183d6256f9a" -%}
+{%- set publicatie_list_uuid_open_access_ja_repository = "716bc5d1-ccea-461f-94a0-2d352a622bd4" -%}
+{%- set publicatie_list_uuid_open_access_nee = "4ba854cd-902a-40e2-8e57-871ea4046bdf1" -%}
+{%- set publicatie_list_uuid_open_access_nee_afspraken = "c988f568-5193-4248-9275-677f5ac9c434" -%}
+
+{%- set contact_gegevens_sleutel_list_uuid = "eb678636-cfb2-416f-b47b-28e17ad2077f" -%}
+{%- set contact_gegevens_sleutel_list_uuid_wat = "4575fcd3-be25-466d-a619-6faef0a3484d" -%}
+{%- set contact_gegevens_sleutel_list_uuid_opslag = "81727f58-0cbd-4c85-8eed-abf97ec65437" -%}
+{%- set contact_gegevens_sleutel_list_uuid_termijn = "184eacbf-8c42-48f7-9b22-00c8196b620b" -%}
+{%- set contact_gegevens_sleutel_list_uuid_openacess = "c7820522-e006-446a-83e2-a795b2689273" -%}
