@@ -5,7 +5,7 @@
     "name": "General Avans template based on NWO guidelines",
     "description": "General DMP based on the NWO guidelines.",
     "license": "CC0",
-    "metamodelVersion": 5,
+    "metamodelVersion": 10,
     "recommendedPackageId": "avans.dsw:nwo-dmp-v-092020:1.0.5:",
     "allowedPackages": [
         {
