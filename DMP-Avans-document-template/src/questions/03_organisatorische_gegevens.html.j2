@@ -38,9 +38,6 @@
     {%- set project_leader_list = [UUID.chapter03_basic_uuid,UUID.Qproject_leader_uuid]|reply_path -%}
     {%- set Project_leaders = repliesMap[project_leader_list]|reply_items -%}
 
-  
-    {{ project_leader_list }}
-
     {%- for project_leader in Project_leaders -%}
 
           {{ project_leader }}
