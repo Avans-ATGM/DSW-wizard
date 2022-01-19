@@ -37,7 +37,13 @@
       
     {%- set project_leader_list = [UUID.chapter03_basic_uuid,UUID.Qproject_leader_uuid]|reply_path -%}
     {%- set Project_leaders = repliesMap[project_leader_list]|reply_items -%}
+
+  
+    {{ project_leader_list }}
+
     {%- for project_leader in Project_leaders -%}
+
+          {{ project_leader }}
           {%- set Project_leader_name_path = [project_leader_list,project_leader,UUID.qproject_leider_naam_uuid]|reply_path -%}
           {%- set project_leader_name = repliesMap[Project_leader_name_path]|reply_str_value -%}
           
@@ -53,7 +59,7 @@
           {%- set Project_leader_exstra_path = [project_leader_list,project_leader,UUID.qProject_leiders_list_exstrainformatie_uuid]|reply_path -%}
           {%- set project_leader_exstra = repliesMap[Project_leader_exstra_path]|reply_str_value -%}
 
-          <p>
+        
           <p><i><u>Projectleider:</i></u> {{project_leader_name}}.<p>
           <p><i><u>organisatie:</i></u> {{project_leader_organisatie}}.<p>
           <p><i><u>email:</i></u> {{project_leader_email}}.<p>

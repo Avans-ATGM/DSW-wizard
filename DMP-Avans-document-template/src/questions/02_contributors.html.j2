@@ -38,9 +38,8 @@
 
             {%- for role_path in contributor_Roles_list_path -%}
                 {%- set  contributor_role_path = [contributor_Roles_uuid_path,role_path]%}
-                {%- set contributor_role = repliesMap[contributor_role_path]|reply_items%}
+                {%- set contributor_role = repliesMap[contributor_role_path]%}
                 {{ role_path }}
-                {{ contributor_Roles_list_path }}
                 {{ contributor_Roles_uuid_path }}
                 {{ contributor_role_path }}
                 <p><i><u> rol: </i></u> {{ contributor_role}} <p>
