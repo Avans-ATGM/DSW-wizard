@@ -12,6 +12,15 @@
     {%- set data_steward_avans_datum_path = [data_steward_avans_path,UUID.qdatasteward_avans_datum_uuid]|reply_path -%}
     {%- set A_data_steward_avans_datum = repliesMap[data_steward_avans_datum_path]|reply_str_value -%}
 
+    {%- set Data_gearchiveerd_path = [UUID.chapter_04_datamanagement_rollen,UUID.qdata_achriveert]|reply_path -%}
+    {%- set A_Data_gearchiveerd = repliesMap[Data_gearchiveerd_path]|reply_str_value -%}
+
+    {%- set Data_gearchiveerd_structuur_path = [UUID.chapter_04_datamanagement_rollen,UUID.qdata_archief_structure_uuid]|reply_path -%}
+    {%- set A_Data_gearchiveerd_structuur = repliesMap[Data_gearchiveerd_structuur_path]|reply_str_value -%}
+
+    {%- set Data_gearchiveerd_replicatie_path = [UUID.chapter_04_datamanagement_rollen,UUID.qdata_documentatie_replicatie_uuid]|reply_path -%}
+    {%- set A_Data_gearchiveerd_replicatie = repliesMap[Data_gearchiveerd_replicatie_path]|reply_str_value -%}
+
     {%- set verantwoordelijke_list = [UUID.chapter_04_datamanagement_rollen,UUID.eerste_verantwoordelijke_list_uuid]|reply_path -%}
     {%- set verantwoordelijken = repliesMap[project_leader_list]|reply_items -%}
     {%- for verantwoordelijke in verantwoordelijken -%}
@@ -48,7 +57,14 @@
             <i><u>datum sinds betrokken:</i></u> {{A_data_steward_avans_datum}}.<p>
       {% endif %}
 		{% else %}
-      <p><i><u>Datasteward betrokken:</i></u><p>
+      <p><i><u>Datasteward betrokken:</i></u> <p>
     {% endif %}
+
+    <p><i><u> Waar wordt data gearchiveerd: </i></u> {{ A_Data_gearchiveerd }}.<p>
+    <p><i><u> Structuur van de data archief: </i></u> {{ A_Data_gearchiveerd_structuur }}.<p>
+    <p><i><u> Wat wordt er gedocumenteerd om replicatie mogelijk temaken?: </i></u> {{ A_Data_gearchiveerd_replicatie }}.<p>
+
+
+
   </div>
 </div>
