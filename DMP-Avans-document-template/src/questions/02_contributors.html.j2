@@ -13,7 +13,7 @@
         {%- set contributor_Email_path = [Contributors_list,Contributor,UUID.contributor_sub_email_uuid]|reply_path -%}
 		{%- set contributor_Email = repliesMap[contributor_Email_path]|reply_str_value -%}
 
-        {%- set contributor_ORCID_path = [Contributors_list,Contributor,UUIDcontributor_ORCID_uuid]|reply_path -%}
+        {%- set contributor_ORCID_path = [Contributors_list,Contributor,UUID.contributor_ORCID_uuid]|reply_path -%}
 		{%- set contributor_ORCID = repliesMap[contributor_ORCID_path]|reply_str_value -%}
 
         {%- set contributor_phone_number_path = [Contributors_list,Contributor,UUID.contributor_phone_number_uuid]|reply_path -%}
@@ -42,14 +42,16 @@
         {%- set contributor_Roles_list_path = repliesMap[contributor_Roles_uuid_path]|reply_items -%}
 
             {%- for role_path in contributor_Roles_list_path -%}
-                {%- set  contributor_role_path = [contributor_Roles_uuid_path,role_path]%}
+                {%- set  contributor_role_path = [contributor_Roles_uuid_path,role_path]|reply_path %}
                 {%- set contributor_role = km.entities.answers[contributor_role_path]%}
+                <p> {{ contributor_role_path}} <p>
+                <p> {{ contributor_role}} <p>
 
                 <p><i><u> rol: </i></u> {{ contributor_role}} <p>
             {% endfor %}
 
             {%- if contributor_exstra_info -%}
-                <p><i><u> Exstra informatie: </i></u> {{ contributor_Email}} <p>
+                <p><i><u> Exstra informatie: </i></u> {{ contributor_exstra_info }} <p>
             {%endif%}
 
 	{% endfor %}

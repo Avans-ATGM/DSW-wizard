@@ -24,8 +24,7 @@
     {%- set A_Data_gearchiveerd_replicatie = repliesMap[Data_gearchiveerd_replicatie_path]|reply_str_value -%}
 
     {%- set verantwoordelijke_list = [UUID.chapter_04_datamanagement_rollen,UUID.eerste_verantwoordelijke_list_uuid]|reply_path -%}
-    {%- set verantwoordelijken = repliesMap[project_leader_list]|reply_items -%}
-
+    {%- set verantwoordelijken = repliesMap[verantwoordelijke_list]|reply_items -%}
     {% for verantwoordelijke in verantwoordelijken %}
 
           {%- set verantwoordelijke_naam_path = [verantwoordelijke_list,verantwoordelijke,UUID.eerste_verantwoordelijke_naam_uuid]|reply_path -%}
@@ -42,7 +41,7 @@
 
           {%- set verantwoordelijke_exstra_path = [verantwoordelijke_list,verantwoordelijke,UUID.eerste_verantwoordelijke_Exstra_informatieuuid]|reply_path -%}
           {%- set verantwoordelijke_exstra = repliesMap[verantwoordelijke_exstra_path]|reply_str_value -%}
-          <p>
+
           <p><i><u>Naam eerste verantwoordelijke:</i></u>verantwoordelijke_organisatie{{verantwoordelijke_naam}}.<p>
           <p><i><u>Organisatie:</i></u> {{onderzoeker_organisatie}}.<p>
           <p><i><u>email:</i></u> {{verantwoordelijke_email}}.<p>
@@ -54,6 +53,7 @@
 
     {% if A_data_steward_avans %}
       <p><i><u>Datasteward betrokken:</i></u>{{ A_data_steward_avans.label }}.<br>
+      <p> {{ A_data_steward_avans_naam }} <p>
       {% if UUID.qdatasteward_avans_ja_uuid == Am_data_steward_avans %}
             <i><u>Naam datasteward:</i></u> {{A_data_steward_avans_naam}}.<br>
             <i><u>datum sinds betrokken:</i></u> {{A_data_steward_avans_datum}}.<p>
