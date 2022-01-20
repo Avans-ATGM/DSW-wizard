@@ -24,7 +24,7 @@
       <p><i><u>Expertisecentrum:</i></u><p>
     {% endif %}
 
-    <p><i><u> Lectoraat waat onderzoek wordt uitgevoerd: {{A_lectoraat }} <p>
+    <p><i><u> Lectoraat waat onderzoek wordt uitgevoerd:</i></u> {{A_lectoraat }} <p>
 
 
 
@@ -34,7 +34,7 @@
         <p><i><u> Naam promotor: </i></u>{{A_promotor}}<p>
       {%endif%}
     {%else%}
-      <p><i><u> Betreft het een PhD project:<p>
+      <p><i><u> Betreft het een PhD project:</i></u><p>
     {%endif%}
 
 
@@ -62,7 +62,7 @@
           <p><i><u>Naam projectleider:</i></u> {{project_leader_name}}.<br>
           <p><i><u>organisatie:</i></u> {{project_leader_organisatie}}.<br>
           <p><i><u>email:</i></u> {{project_leader_email}}.<br>
-          <p><i><u>telefoon:</i></u> {{project_leader_email_telefoon}}.<br>
+          <p><i><u>telefoon:</i></u> {{project_leader_telefoon}}.<br>
           {% if project_leader_exstra %}
             <p><i><u>Exstra informatie:</i></u><br>{{ project_leader_exstra }}.<br>
           {% endif %}
@@ -85,7 +85,7 @@
           {%- set onderzoeker_email_path = [onderzoekers_list,onderzoeker,UUID.qOnderzoekers_list_email_uuid]|reply_path -%}
           {%- set onderzoeker_email = repliesMap[onderzoeker_organisatie_path]|reply_str_value -%}
 
-          {%- set onderzoeker_telefoon_path = [onderzoekers_list,onderzoeker,UUID.qOnderzoekers_list_email_uuid]|reply_path -%}
+          {%- set onderzoeker_telefoon_path = [onderzoekers_list,onderzoeker,UUID.qOnderzoekers_list_telefoon_uuid]|reply_path -%}
           {%- set onderzoeker_telefoon = repliesMap[onderzoeker_telefoon_path]|reply_str_value -%}
 
           {%- set qOnderzoekers_list_exstra_path = [onderzoekers_list,onderzoeker,UUID.qOnderzoekers_list_exstra_uuid]|reply_path -%}
