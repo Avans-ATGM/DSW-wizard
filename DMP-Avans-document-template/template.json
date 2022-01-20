@@ -1,7 +1,7 @@
 {
     "templateId": "DMP-avans",
     "organizationId": "avans.dsw",
-    "version": "1.0.20",
+    "version": "1.0.21",
     "name": "General Avans Template",
     "description": "The general Avans DMP template to use",
     "license": "CC0",

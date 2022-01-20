@@ -8,7 +8,9 @@
     {%- set A_data_steward_avans = km.entities.answers[Am_data_steward_avans] -%}
 
     {%- set data_steward_avans_naam_path = [data_steward_avans_path,UUID.qdatasteward_avans_naam_uuid]|reply_path -%}
-    {%- set A_data_steward_avans = repliesMap[data_steward_avans_naam_path]|reply_str_value -%}
+    {%- set A_data_steward_avans_naam = repliesMap[data_steward_avans_naam_path]|reply_str_value -%}
+
+
     {%- set data_steward_avans_datum_path = [data_steward_avans_path,UUID.qdatasteward_avans_datum_uuid]|reply_path -%}
     {%- set A_data_steward_avans_datum = repliesMap[data_steward_avans_datum_path]|reply_str_value -%}
 
@@ -53,7 +55,7 @@
     {% if A_data_steward_avans %}
       <p><i><u>Datasteward betrokken:</i></u>{{ A_data_steward_avans.label }}.<br>
       {% if UUID.qdatasteward_avans_ja_uuid == Am_data_steward_avans %}
-            <i><u>Naam datasteward:</i></u> {{A_data_steward_avans}}.<br>
+            <i><u>Naam datasteward:</i></u> {{A_data_steward_avans_naam}}.<br>
             <i><u>datum sinds betrokken:</i></u> {{A_data_steward_avans_datum}}.<p>
       {% endif %}
 		{% else %}
