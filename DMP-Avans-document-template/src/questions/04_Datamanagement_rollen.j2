@@ -7,12 +7,13 @@
     {%- set Am_data_steward_avans = repliesMap[data_steward_avans_path]|reply_str_value -%}
     {%- set A_data_steward_avans = km.entities.answers[Am_data_steward_avans] -%}
 
-    {%- set data_steward_avans_naam_path = [data_steward_avans_path,UUID.qdatasteward_avans_naam_uuid]|reply_path -%}
+    {%- set data_steward_avans_naam_path = [data_steward_avans_path,UUID.qdatasteward_avans_ja_uuid,UUID.qdatasteward_avans_naam_uuid]|reply_path -%}
     {%- set A_data_steward_avans_naam = repliesMap[data_steward_avans_naam_path]|reply_str_value -%}
 
-
-    {%- set data_steward_avans_datum_path = [data_steward_avans_path,UUID.qdatasteward_avans_datum_uuid]|reply_path -%}
+    {%- set data_steward_avans_datum_path = [data_steward_avans_path,UUID.qdatasteward_avans_ja_uuid,UUID.qdatasteward_avans_datum_uuid]|reply_path -%}
     {%- set A_data_steward_avans_datum = repliesMap[data_steward_avans_datum_path]|reply_str_value -%}
+
+
 
     {%- set Data_gearchiveerd_path = [UUID.chapter_04_datamanagement_rollen,UUID.qdata_achriveert]|reply_path -%}
     {%- set A_Data_gearchiveerd = repliesMap[Data_gearchiveerd_path]|reply_str_value -%}
@@ -43,7 +44,7 @@
           {%- set verantwoordelijke_exstra = repliesMap[verantwoordelijke_exstra_path]|reply_str_value -%}
 
           <p><i><u>Naam eerste verantwoordelijke:</i></u>verantwoordelijke_organisatie{{verantwoordelijke_naam}}.<p>
-          <p><i><u>Organisatie:</i></u> {{onderzoeker_organisatie}}.<p>
+          <p><i><u>Organisatie:</i></u> {{verantwoordelijke_organisatie}}.<p>
           <p><i><u>email:</i></u> {{verantwoordelijke_email}}.<p>
           <p><i><u>telefoon:</i></u> {{verantwoordelijke_telefoon}}.<p>
           {% if verantwoordelijke_exstra %}
@@ -53,7 +54,6 @@
 
     {% if A_data_steward_avans %}
       <p><i><u>Datasteward betrokken:</i></u> {{ A_data_steward_avans.label }}.<br>
-      <p> {{ A_data_steward_avans_naam }} <p>
       {% if UUID.qdatasteward_avans_ja_uuid == Am_data_steward_avans %}
             <i><u>Naam datasteward:</i></u> {{A_data_steward_avans_naam}}.<br>
             <i><u>datum sinds betrokken:</i></u> {{A_data_steward_avans_datum}}.<p>

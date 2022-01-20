@@ -37,7 +37,7 @@
     {# project leaders#}
     {%- set project_leader_list = [UUID.chapter03_basic_uuid,UUID.Qproject_leader_uuid]|reply_path -%}
     {%- set Project_leaders = repliesMap[project_leader_list]|reply_items -%}
-
+    <p> project leiders: <p>
     {%- for project_leader in Project_leaders -%}
 
           {{ project_leader }}
@@ -57,7 +57,7 @@
           {%- set project_leader_exstra = repliesMap[Project_leader_exstra_path]|reply_str_value -%}
 
         
-          <p><i><u>Projectleider:</i></u> {{project_leader_name}}.<p>
+          <p><i><u>Naam projectleider:</i></u> {{project_leader_name}}.<p>
           <p><i><u>organisatie:</i></u> {{project_leader_organisatie}}.<p>
           <p><i><u>email:</i></u> {{project_leader_email}}.<p>
           <p><i><u>telefoon:</i></u> {{project_leader_email_telefoon}}.<p>
@@ -66,30 +66,31 @@
           {% endif %}
       {%endfor%}
     {# researchers #}
+    <p> researchers <p>
     {%- set onderzoekers_list = [UUID.chapter03_basic_uuid,UUID.qOnderzoekers_list_uuid]|reply_path -%}
     {%- set onderzoekers = repliesMap[project_leader_list]|reply_items -%}
     {%- for onderzoeker in onderzoekers -%}
 
-          {%- set onderzoeker_naam_path = [project_leader_list,project_leader,UUID.qOnderzoekers_list_naam_uuid]|reply_path -%}
+          {%- set onderzoeker_naam_path = [onderzoekers_list,onderzoeker,UUID.qOnderzoekers_list_naam_uuid]|reply_path -%}
           {%- set onderzoeker_naam = repliesMap[onderzoeker_naam_path]|reply_str_value -%}
 
-          {%- set onderzoeker_organisatie_path = [project_leader_list,project_leader,UUID.qOnderzoekers_list_organisatie_uuid]|reply_path -%}
+          {%- set onderzoeker_organisatie_path = [onderzoekers_list,onderzoeker,UUID.qOnderzoekers_list_organisatie_uuid]|reply_path -%}
           {%- set onderzoeker_organisatie = repliesMap[onderzoeker_organisatie_path]|reply_str_value -%}
     
-          {%- set onderzoeker_functie_path = [project_leader_list,project_leader,UUID.qOnderzoekers_list_functie_uuid]|reply_path -%}
+          {%- set onderzoeker_functie_path = [onderzoekers_list,onderzoeker,UUID.qOnderzoekers_list_functie_uuid]|reply_path -%}
           {%- set onderzoeker_functie = repliesMap[onderzoeker_organisatie_path]|reply_str_value -%}
 
-          {%- set onderzoeker_email_path = [project_leader_list,project_leader,UUID.qOnderzoekers_list_email_uuid]|reply_path -%}
+          {%- set onderzoeker_email_path = [onderzoekers_list,onderzoeker,UUID.qOnderzoekers_list_email_uuid]|reply_path -%}
           {%- set onderzoeker_email = repliesMap[onderzoeker_organisatie_path]|reply_str_value -%}
 
-          {%- set onderzoeker_telefoon_path = [project_leader_list,project_leader,UUID.qOnderzoekers_list_email_uuid]|reply_path -%}
+          {%- set onderzoeker_telefoon_path = [onderzoekers_list,onderzoeker,UUID.qOnderzoekers_list_email_uuid]|reply_path -%}
           {%- set onderzoeker_telefoon = repliesMap[onderzoeker_telefoon_path]|reply_str_value -%}
 
-          {%- set qOnderzoekers_list_exstra_path = [project_leader_list,project_leader,UUID.qOnderzoekers_list_exstra_uuid]|reply_path -%}
+          {%- set qOnderzoekers_list_exstra_path = [onderzoekers_list,onderzoeker,UUID.qOnderzoekers_list_exstra_uuid]|reply_path -%}
           {%- set onderzoekers_exstra = repliesMap[qOnderzoekers_list_exstra_path]|reply_str_value -%}
 
           <p>
-          <p><i><u>Onderzoeker:</i></u> {{onderzoeker_naam}}.<p>
+          <p><i><u>Naam onderzoeker:</i></u> {{onderzoeker_naam}}.<p>
           <p><i><u>Organisatie:</i></u> {{onderzoeker_organisatie}}.<p>
           <p><i><u>Functie:</i></u> {{onderzoeker_functie}}.<p>
           <p><i><u>email:</i></u> {{onderzoeker_email}}.<p>
@@ -102,6 +103,7 @@
 
     
     {# assignment givvers #}
+    <p> oprdracht gevers <p>
     {%- set opdracht_gever_list = [UUID.chapter03_basic_uuid,UUID.Qopdrachtgever]|reply_path -%}
     {%- set opdrachtgevers = repliesMap[opdracht_gever_list]|reply_items -%}
     {%- for opdrachtgever in opdrachtgevers -%}
@@ -125,7 +127,7 @@
           {%- set onderzoekers_exstra = repliesMap[qOnderzoekers_list_exstra_path]|reply_str_value -%}
 
           <p>
-          <p><i><u>Naam onderzoeker:</i></u> {{onderzoeker_naam}}.<p>
+          <p><i><u>Naam opdrachtgever:</i></u> {{onderzoeker_naam}}.<p>
           <p><i><u>Organisatie:</i></u> {{onderzoeker_organisatie}}.<p>
           <p><i><u>Functie:</i></u> {{onderzoeker_functie}}.<p>
           <p><i><u>email:</i></u> {{onderzoeker_email}}.<p>
