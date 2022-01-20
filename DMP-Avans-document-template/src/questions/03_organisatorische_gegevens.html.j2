@@ -34,7 +34,7 @@
     {%endif%}
 
 
-      
+    {# project leaders#}
     {%- set project_leader_list = [UUID.chapter03_basic_uuid,UUID.Qproject_leader_uuid]|reply_path -%}
     {%- set Project_leaders = repliesMap[project_leader_list]|reply_items -%}
 
@@ -65,10 +65,10 @@
             <p><i><u>Exstra informatie:</i></u><br>{{ project_leader_exstra }}.<p>
           {% endif %}
       {%endfor%}
-
+    {# researchers #}
     {%- set onderzoekers_list = [UUID.chapter03_basic_uuid,UUID.qOnderzoekers_list_uuid]|reply_path -%}
     {%- set onderzoekers = repliesMap[project_leader_list]|reply_items -%}
-    {%- for onderzoeker in Project_leaders -%}
+    {%- for onderzoeker in onderzoekers -%}
 
           {%- set onderzoeker_naam_path = [project_leader_list,project_leader,UUID.qOnderzoekers_list_naam_uuid]|reply_path -%}
           {%- set onderzoeker_naam = repliesMap[onderzoeker_naam_path]|reply_str_value -%}
@@ -99,39 +99,9 @@
           {% endif %}
     {% endfor %}
 
-    {%- set onderzoekers_list = [UUID.chapter03_basic_uuid,UUID.qOnderzoekers_list_uuid]|reply_path -%}
-    {%- set onderzoekers = repliesMap[project_leader_list]|reply_items -%}
-    {%- for onderzoeker in Project_leaders -%}
 
-          {%- set onderzoeker_naam_path = [onderzoekers_list,onderzoeker,UUID.qOnderzoekers_list_naam_uuid]|reply_path -%}
-          {%- set onderzoeker_naam = repliesMap[onderzoeker_naam_path]|reply_str_value -%}
-
-          {%- set onderzoeker_organisatie_path = [onderzoekers_list,onderzoeker,UUID.qOnderzoekers_list_organisatie_uuid]|reply_path -%}
-          {%- set onderzoeker_organisatie = repliesMap[onderzoeker_organisatie_path]|reply_str_value -%}
     
-          {%- set onderzoeker_functie_path = [onderzoekers_list,onderzoeker,UUID.qOnderzoekers_list_functie_uuid]|reply_path -%}
-          {%- set onderzoeker_functie = repliesMap[onderzoeker_organisatie_path]|reply_str_value -%}
-
-          {%- set onderzoeker_email_path = [onderzoekers_list,onderzoeker,UUID.qOnderzoekers_list_email_uuid]|reply_path -%}
-          {%- set onderzoeker_email = repliesMap[onderzoeker_organisatie_path]|reply_str_value -%}
-
-          {%- set onderzoeker_telefoon_path = [onderzoekers_list,onderzoeker,UUID.qOnderzoekers_list_telefoon_uuid]|reply_path -%}
-          {%- set onderzoeker_telefoon = repliesMap[onderzoeker_telefoon_path]|reply_str_value -%}
-
-          {%- set qOnderzoekers_list_exstra_path = [onderzoekers_list,onderzoeker,UUID.qOnderzoekers_list_exstra_uuid]|reply_path -%}
-          {%- set onderzoekers_exstra = repliesMap[qOnderzoekers_list_exstra_path]|reply_str_value -%}
-
-          <p>
-          <p><i><u>Onderzoeker:</i></u> {{onderzoeker_naam}}.<p>
-          <p><i><u>Organisatie:</i></u> {{onderzoeker_organisatie}}.<p>
-          <p><i><u>Functie:</i></u> {{onderzoeker_functie}}.<p>
-          <p><i><u>email:</i></u> {{onderzoeker_email}}.<p>
-          <p><i><u>telefoon:</i></u> {{onderzoeker_telefoon}}.<p>
-          {% if onderzoekers_exstra %}
-            <p><i><u>Exstra informatie:</i></u><br>{{ onderzoekers_exstra }}.<p>
-          {% endif %}
-    {% endfor %}
-
+    {# assignment givvers #}
     {%- set opdracht_gever_list = [UUID.chapter03_basic_uuid,UUID.Qopdrachtgever]|reply_path -%}
     {%- set opdrachtgevers = repliesMap[opdracht_gever_list]|reply_items -%}
     {%- for opdrachtgever in opdrachtgevers -%}

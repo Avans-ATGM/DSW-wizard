@@ -52,14 +52,12 @@
       {% endfor %}
 
     {% if A_data_steward_avans %}
-      <p><i><u>Datasteward betrokken:</i></u>{{ A_data_steward_avans.label }}.<br>
+      <p><i><u>Datasteward betrokken:</i></u> {{ A_data_steward_avans.label }}.<br>
       <p> {{ A_data_steward_avans_naam }} <p>
       {% if UUID.qdatasteward_avans_ja_uuid == Am_data_steward_avans %}
             <i><u>Naam datasteward:</i></u> {{A_data_steward_avans_naam}}.<br>
             <i><u>datum sinds betrokken:</i></u> {{A_data_steward_avans_datum}}.<p>
       {% endif %}
-		{% else %}
-      <p><i><u>Datasteward betrokken:</i></u> <p>
     {% endif %}
 
     <p><i><u> Waar wordt data gearchiveerd: </i></u> {{ A_Data_gearchiveerd }}.<p>
