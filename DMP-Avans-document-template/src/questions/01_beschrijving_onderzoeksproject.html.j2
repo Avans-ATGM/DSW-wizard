@@ -23,8 +23,8 @@
     {%- set Funder = repliesMap[Funder_uuid_path]|reply_str_value -%}
 
     {%- set Fund_status_path = [UUID.chapter01_basic_uudid,UUID.Fund_status_uuid]|reply_path -%}
-    {%- set Fund_status_all_answers = repliesMap[qDataSequrityUUIDpath]|reply_str_value -%}
-    {%- set Fund_status_answer = km.entities.answers[qmDataSequrity] -%}
+    {%- set Fund_status_all_answers = repliesMap[Fund_status_path]|reply_str_value -%}
+    {%- set Fund_status_answer = km.entities.answers[Fund_status_all_answers] -%}
 
     {%- set Grant_number_path = [UUID.chapter01_basic_uudid,UUID.grant_number_uuid]|reply_path -%}
     {%- set Grant_number = repliesMap[Grant_number_path]|reply_str_value -%}
@@ -37,6 +37,7 @@
     <p><i><u>Projectnummer:</u></i> {{A_project_number}}<p>
     <p><i><u>Funder:</u></i> {{Funder}}<p>
 
+    {{ Fund_status_all_answers }}
     {% if Fund_status_answer %}
       <p><i><u>Fund Status:</i></u><br>{{ Fund_status_answer.label }}.<p>
 		{% else %}
