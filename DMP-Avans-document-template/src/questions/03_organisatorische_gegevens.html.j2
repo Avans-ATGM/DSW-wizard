@@ -35,12 +35,10 @@
 
 
     {# project leaders#}
-    {%- set project_leader_list = [UUID.chapter03_basic_uuid,UUID.Qproject_leader_uuid]|reply_path -%}
+    {%- set project_leader_list = [UUID.chapter03_basic_uuid,UUID.qProject_leiders_list_uuid]|reply_path -%}
     {%- set Project_leaders = repliesMap[project_leader_list]|reply_items -%}
     <p> project leiders: <p>
     {%- for project_leader in Project_leaders -%}
-
-          {{ project_leader }}
           {%- set Project_leader_name_path = [project_leader_list,project_leader,UUID.qproject_leider_naam_uuid]|reply_path -%}
           {%- set project_leader_name = repliesMap[Project_leader_name_path]|reply_str_value -%}
           
@@ -68,7 +66,7 @@
     {# researchers #}
     <p> researchers <p>
     {%- set onderzoekers_list = [UUID.chapter03_basic_uuid,UUID.qOnderzoekers_list_uuid]|reply_path -%}
-    {%- set onderzoekers = repliesMap[project_leader_list]|reply_items -%}
+    {%- set onderzoekers = repliesMap[onderzoekers_list]|reply_items -%}
     {%- for onderzoeker in onderzoekers -%}
 
           {%- set onderzoeker_naam_path = [onderzoekers_list,onderzoeker,UUID.qOnderzoekers_list_naam_uuid]|reply_path -%}
