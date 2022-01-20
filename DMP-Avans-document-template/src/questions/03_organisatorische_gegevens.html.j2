@@ -30,7 +30,7 @@
 
     {% if Q_PHD_answers%}
       <p><i><u> Betreft het een PhD project: </i></u>{{ A_PHD_answer.label }}.<p>
-      {% if Q_PHD_answers == qPhd_project_ja_uuid%}
+      {% if UUID.qPhd_project_ja_uuid == Q_PHD_answers%}
         <p><i><u> Naam promotor: </i></u>{{A_promotor}}<p>
       {%endif%}
     {%else%}
@@ -59,12 +59,12 @@
           {%- set project_leader_exstra = repliesMap[Project_leader_exstra_path]|reply_str_value -%}
 
         
-          <p><i><u>Naam projectleider:</i></u> {{project_leader_name}}.<br>
-          <p><i><u>organisatie:</i></u> {{project_leader_organisatie}}.<br>
-          <p><i><u>email:</i></u> {{project_leader_email}}.<br>
-          <p><i><u>telefoon:</i></u> {{project_leader_telefoon}}.<br>
+          <i><u>Naam projectleider:</i></u> {{project_leader_name}}.<br>
+          <i><u>organisatie:</i></u> {{project_leader_organisatie}}.<br>
+          <i><u>email:</i></u> {{project_leader_email}}.<br>
+          <i><u>telefoon:</i></u> {{project_leader_telefoon}}.<br>
           {% if project_leader_exstra %}
-            <p><i><u>Exstra informatie:</i></u><br>{{ project_leader_exstra }}.<br>
+            <i><u>Exstra informatie:</i></u><br>{{ project_leader_exstra }}.<br>
           {% endif %}
       {%endfor%}
     {# researchers #}
@@ -91,14 +91,14 @@
           {%- set qOnderzoekers_list_exstra_path = [onderzoekers_list,onderzoeker,UUID.qOnderzoekers_list_exstra_uuid]|reply_path -%}
           {%- set onderzoekers_exstra = repliesMap[qOnderzoekers_list_exstra_path]|reply_str_value -%}
 
-          <p>
-          <p><i><u>Naam onderzoeker:</i></u> {{onderzoeker_naam}}.<br>
-          <p><i><u>Organisatie:</i></u> {{onderzoeker_organisatie}}.<br>
-          <p><i><u>Functie:</i></u> {{onderzoeker_functie}}.<br>
-          <p><i><u>email:</i></u> {{onderzoeker_email}}.<br>
-          <p><i><u>telefoon:</i></u> {{onderzoeker_telefoon}}.<br>
+          
+          <i><u>Naam onderzoeker:</i></u> {{onderzoeker_naam}}.<br>
+          <i><u>Organisatie:</i></u> {{onderzoeker_organisatie}}.<br>
+          <i><u>Functie:</i></u> {{onderzoeker_functie}}.<br>
+          <i><u>email:</i></u> {{onderzoeker_email}}.<br>
+          <i><u>telefoon:</i></u> {{onderzoeker_telefoon}}.<br>
           {% if onderzoekers_exstra %}
-            <p><i><u>Exstra informatie:</i></u><br>{{ onderzoekers_exstra }}.<br>
+            <i><u>Exstra informatie:</i></u><br>{{ onderzoekers_exstra }}.<br>
           {% endif %}
     {% endfor %}
 
@@ -129,13 +129,13 @@
           {%- set opdrachtgever_exstra = repliesMap[opdrachtgever_list_exstra_path]|reply_str_value -%}
 
           <p>
-          <p><i><u>Naam opdrachtgever:</i></u> {{opdrachtgever_naam}}.<br>
-          <p><i><u>Organisatie:</i></u> {{opdrachtgever_organisatie}}.<br>
-          <p><i><u>Functie:</i></u> {{opdrachtgever_functie}}.<br>
-          <p><i><u>email:</i></u> {{opdrachtgever_email}}.<br>
-          <p><i><u>telefoon:</i></u> {{opdrachtgever_telefoon}}.<br>
+          <i><u>Naam opdrachtgever:</i></u> {{opdrachtgever_naam}}.<br>
+          <i><u>Organisatie:</i></u> {{opdrachtgever_organisatie}}.<br>
+          <i><u>Functie:</i></u> {{opdrachtgever_functie}}.<br>
+          <i><u>email:</i></u> {{opdrachtgever_email}}.<br>
+          <i><u>telefoon:</i></u> {{opdrachtgever_telefoon}}.<br>
           {% if opdrachtgever_exstra %}
-            <p><i><u>Exstra informatie:</i></u><br>{{ opdrachtgever_exstra }}.<br>
+            <i><u>Exstra informatie:</i></u><br>{{ opdrachtgever_exstra }}.<br>
           {% endif %}
     {% endfor %}
 

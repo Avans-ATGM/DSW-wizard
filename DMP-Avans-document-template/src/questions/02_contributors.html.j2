@@ -42,9 +42,11 @@
         {%- set contributor_Roles_list_path = repliesMap[contributor_Roles_uuid_path]|reply_items -%}
 
             {%- for role_path in contributor_Roles_list_path -%}
-                {%- set  contributor_role_path = [contributor_Roles_uuid_path,role_path]|reply_path %}
+                {%- set contributor_role_path = [contributor_Roles_uuid_path,role_path]|reply_path %}
                 {%- set contributor_role = km.entities.answers[contributor_role_path]%}
+                role_path
                 <p> {{ contributor_role_path}} <p>
+                role
                 <p> {{ contributor_role}} <p>
 
                 <p><i><u> rol: </i></u> {{ contributor_role}} <p>
