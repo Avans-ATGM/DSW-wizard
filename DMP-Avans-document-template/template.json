@@ -1,11 +1,11 @@
 {
     "templateId": "DMP-avans",
     "organizationId": "avans.dsw",
-    "version": "1.0.22",
+    "version": "1.0.23",
     "name": "General Avans Template",
     "description": "The general Avans DMP template to use",
     "license": "CC0",
-    "metamodelVersion": 7,
+    "metamodelVersion": 8,
     "recommendedPackageId": "avans.dsw:DMP-avans:1.0.2",
     "allowedPackages": [
         {
